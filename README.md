@@ -1,6 +1,6 @@
-# nada.design — Personal Portfolio
+# nada.design — Portfolio
 
-Personal portfolio website for **Priyanshu Nada**, focused on Human-Centered AI (HCAI) and AI Interaction Architecture.
+Personal portfolio for **Priyanshu Nada** — Product Designer specializing in Human-Centered AI and AI Interaction Architecture.
 
 ## Live
 
@@ -8,27 +8,35 @@ Deploy via GitHub Pages: **Settings → Pages → Source → main / root**
 
 ## Featured Projects
 
-- **[Flow](https://flowbanking.netlify.app)** — Banking that disappears into the platforms Gen Z already uses. Three interconnected HCAI products (Split, Safe, Together) built on a shared ML layer.
-- **[Capstack](https://priyanshunada04.github.io/Capstack/)** — The only funding aggregator built around trust. 2,400+ verified opportunities with 60-second eligibility cards.
+- **[Flow](https://flowbanking.netlify.app/)** — Banking that disappears. Three interconnected HCAI products embedded inside iMessage, Instagram, and Uber.
+- **[Capstack](https://priyanshunada04.github.io/Capstack/)** — Trust-first funding discovery. 2,400+ verified opportunities with 60-second eligibility cards.
 
-## Tech
+## Features
 
-- Single-file HTML/CSS/JS — no build step, no dependencies
-- Resume PDF included — linked from nav, hero, CTA, and footer
-- Instrument Serif + DM Sans + JetBrains Mono (Google Fonts)
-- Intersection Observer scroll reveals with staggered animations
-- Responsive down to 380px with mobile hamburger nav
-- Page loader, parallax glow, active nav highlighting
+- Custom cursor with magnetic hover effects (desktop)
+- Typewriter hero: intelligence → finance → trust → context → AI (stops)
+- Scroll-triggered reveal animations with staggered children
+- Expandable project module cards
+- Parallax glow orbs on scroll
+- Active nav section highlighting
+- Live clock
+- Responsive: 900px / 600px / 380px + touch target compliance
+- Resume PDF linked from nav, hero, CTA, and footer
+- Single HTML file — zero dependencies, zero build step
+
+## Files
+
+```
+├── index.html                                ← portfolio site
+├── Priyanshu_Nada_Product_Design_Resume.pdf  ← resume
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ## Deploy
 
-### GitHub Pages
-1. Push this repo to GitHub
-2. Go to **Settings → Pages → Source → Deploy from branch → `main` / `root`**
-3. Site will be live at `https://<username>.github.io/<repo-name>/`
-
-### Netlify / Vercel
-Just drag and drop the folder or connect the repo — zero config needed.
+Push to GitHub → Settings → Pages → main / root. Done.
 
 ## Contact
 
