@@ -157,12 +157,73 @@ footer{border-top:1px solid var(--border)}
 .foot a{color:var(--t2);text-decoration:none}
 .foot a:hover{color:var(--accent)}
 
-/* Reveal (only when JS runs, only if motion is OK) */
-.js .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+/* Flow platform diagram */
+.platform{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.plat-row{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.8rem}
+.plat-card{border:1px solid var(--border2);border-radius:12px;background:var(--bg);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:0.35rem}
+.plat-card b{font-family:var(--serif);font-weight:400;font-size:1.3rem}
+.plat-card span:last-child{font-size:0.9rem;color:var(--t2);font-weight:300;line-height:1.55}
+.plat-kind{font-family:var(--mono);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent)}
+.plat-base{position:relative;margin-top:1.6rem;border:1px dashed var(--border2);border-radius:12px;padding:0.9rem 1.2rem;display:flex;flex-wrap:wrap;gap:0.5rem 1.2rem;align-items:center;font-size:0.9rem;color:var(--t2)}
+.plat-base::before{content:'';position:absolute;left:16.6%;right:16.6%;top:-1.6rem;height:1.6rem;border-left:1px solid var(--border2);border-right:1px solid var(--border2);background:linear-gradient(var(--border2),var(--border2)) center/1px 100% no-repeat}
+.plat-base .plat-kind{color:var(--t3)}
+.handoffs{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.handoffs li{display:grid;grid-template-columns:12.5rem minmax(0,1fr);gap:1rem;align-items:baseline;padding:0.9rem 1.1rem;border:1px solid var(--border);border-radius:12px;background:var(--bg)}
+.hf-route{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.8rem;color:var(--t1)}
+.hf-route i{font-style:normal;color:var(--accent);display:inline-block}
+.hf-text{font-size:0.94rem;color:var(--t2);font-weight:300}
+
+/* Product tabs */
+.tour{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.tabs{display:inline-flex;gap:0.3rem;padding:0.3rem;border:1px solid var(--border2);border-radius:100px;margin-bottom:1.6rem;position:relative}
+.tab{min-height:44px;padding:0 1.3rem;border:0;border-radius:100px;background:transparent;color:var(--t2);font-family:var(--sans);font-size:0.95rem;cursor:pointer;transition:background 0.3s var(--ease),color 0.3s}
+.tab:hover{color:var(--t1)}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--bg);font-weight:500}
+.panel{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);gap:2.5rem;align-items:center}
+.js .panel[hidden]{display:none}
+.panel-title{font-family:var(--serif);font-size:1.5rem;color:var(--t1);font-weight:400;line-height:1.25}
+.panel + .panel{margin-top:2.5rem}
+.js .panel + .panel{margin-top:0}
+
+/* Scroll progress */
+.progress{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:150;pointer-events:none}
+
+/* Reveal (only when JS runs) */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
 .js .reveal.vis{opacity:1;transform:none}
+
+/* Motion: only when the visitor hasn't asked for less */
+@media (prefers-reduced-motion:no-preference){
+  .hero .label,.hero .h1,.hero-sub,.hero-cta,.facts{animation:rise 0.9s var(--ease) both}
+  .hero .h1{animation-delay:0.08s}.hero-sub{animation-delay:0.18s}.hero-cta{animation-delay:0.28s}.facts{animation-delay:0.4s}
+  .h1 em{background:linear-gradient(var(--accent),var(--accent)) 0 92%/0 2px no-repeat;animation:underline 0.9s var(--ease) 0.9s forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes underline{to{background-size:100% 2px}}
+
+  .js .dlist li,.js .principles li,.js .plat-card,.js .handoffs li,.js .next-list li,.js .ticks li{opacity:0;transform:translateY(14px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease),border-color 0.3s,background 0.3s}
+  .js .dlist.vis li,.js .principles.vis li,.js .plat-row.vis .plat-card,.js .handoffs.vis li,.js .ticks.vis li,.js .next-list.vis li{opacity:1;transform:none}
+  .js :is(.dlist,.principles,.plat-row,.handoffs,.next-list,.ticks) > :nth-child(2){transition-delay:0.08s}
+  .js :is(.dlist,.principles,.plat-row,.handoffs,.next-list,.ticks) > :nth-child(3){transition-delay:0.16s}
+  .js :is(.dlist,.principles,.plat-row,.handoffs,.next-list,.ticks) > :nth-child(4){transition-delay:0.24s}
+
+  .dlist li:hover,.principles li:hover,.plat-card:hover{border-color:var(--accent-dim);transform:translateY(-3px)!important;transition-delay:0s!important}
+  .handoffs li:hover .hf-route i{animation:nudge 0.6s var(--ease)}
+  @keyframes nudge{50%{transform:translateX(4px)}}
+  .feature-img img,.shot > img{transition:transform 0.8s var(--ease)}
+  .feature-img:hover img,.shot:hover > img{transform:scale(1.025)}
+  .btn .arr{display:inline-block;transition:transform 0.3s var(--ease)}
+  .btn:hover .arr{transform:translateX(4px)}
+  .nav-links a:not(.btn-sm){background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 1px no-repeat;transition:color 0.2s,background-size 0.35s var(--ease)}
+  .nav-links a:not(.btn-sm):hover,.nav-links a.active{background-size:100% 1px}
+  .panel.enter{animation:panelIn 0.55s var(--ease) both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .n-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:0.45rem;vertical-align:1px;animation:blink 2.4s ease-in-out infinite}
+  @keyframes blink{50%{opacity:0.25}}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none;transition:none}
+  .progress{display:none}
 }
 
 /* Responsive */
@@ -185,7 +246,12 @@ footer{border-top:1px solid var(--border)}
   .case-head{padding:1.6rem 1.3rem 0}
   .shot{margin:1.5rem 1.3rem 0}
   .case-body{padding:1.6rem 1.3rem 1.8rem}
-  .cols,.dlist,.about-grid,.feature{grid-template-columns:1fr}
+  .cols,.dlist,.about-grid,.feature,.panel,.plat-row{grid-template-columns:1fr}
+  .plat-base::before{display:none}
+  .handoffs li{grid-template-columns:1fr;gap:0.4rem}
+  .panel{gap:1.4rem}
+  .tabs{display:flex;width:100%}
+  .tab{flex:1;padding:0 0.6rem}
   .feature{gap:1.5rem}
   .strip img{height:340px}
   .cols{gap:1.8rem}
@@ -205,6 +271,7 @@ footer{border-top:1px solid var(--border)}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="nav-in">
@@ -237,7 +304,7 @@ footer{border-top:1px solid var(--border)}
     <dl class="facts">
       <div><dt>Based in</dt><dd>San Francisco, CA</dd></div>
       <div><dt>Open to</dt><dd>Product design, AI/UX and design technologist roles</dd></div>
-      <div><dt>Graduating</dt><dd>B.S. Computer Science, Dec 2026</dd></div>
+      <div><dt>Graduating</dt><dd>B.S. Computer Science, May 2027</dd></div>
     </dl>
   </div>
 </section>
@@ -255,11 +322,11 @@ footer{border-top:1px solid var(--border)}
     <article class="case reveal" aria-labelledby="flow-title">
       <div class="case-head">
         <div class="case-kicker"><span class="case-num">01</span><span class="pill">Concept project</span><span class="pill">Fintech</span><span class="pill">Conversational AI</span></div>
-        <h3 class="case-title" id="flow-title">Flow</h3>
-        <p class="case-lede">Money tools for Gen Z that live inside the group chats where shared costs already get talked about, instead of in yet another banking app.</p>
+        <h3 class="case-title" id="flow-title">Flow: banking that disappears</h3>
+        <p class="case-lede">AI money tools for Gen Z that show up inside iMessage, Instagram and Uber at the moment someone is about to spend, instead of asking them to open a separate banking app.</p>
         <dl class="case-meta">
-          <div><dt>My role</dt><dd>Product designer, from research to prototype</dd></div>
-          <div><dt>Deliverables</dt><dd>9-screen Split flow with states, 3 Figma prototypes, React case-study site</dd></div>
+          <div><dt>My role</dt><dd>End to end: research, platform architecture, interaction design</dd></div>
+          <div><dt>Deliverables</dt><dd>3 Figma prototypes, a 9-screen Split flow, architecture docs, React case-study site</dd></div>
           <div><dt>Surfaces</dt><dd>iMessage, lock screen, widgets</dd></div>
           <div><dt>Status</dt><dd>Concept, not built for production</dd></div>
         </dl>
@@ -269,7 +336,7 @@ footer{border-top:1px solid var(--border)}
         <div class="strip" tabindex="0" role="region" aria-label="Flow Split screens, scroll sideways to see all nine">
           <img src="./assets/flow-split-flow.jpg" width="3212" height="760" alt="Nine iPhone screens of the Flow Split flow, left to right: an iMessage group chat where Flow detects a $94.50 dinner bill and suggests a split; split details with Equal, Custom and Itemized options; Apple Pay confirming a $31.50 share; processing; split sent with $63.00 outstanding; live status at 2 of 3 paid with a nudge for the friend who hasn't opened it; a decline path with options to cover the share, nudge again or cancel; split settled; and a sheet of status chips and components.">
         </div>
-        <figcaption>Flow Split, end to end: from "total was $94.50, splitting 3 ways" in a group chat to a settled split, including the decline path. Scroll sideways to see every screen.</figcaption>
+        <figcaption>Flow Split, end to end: from "total was $94.50, splitting 3 ways" in a group chat to a settled split. Scroll sideways to see every screen.</figcaption>
       </figure>
 
       <div class="case-body">
@@ -278,17 +345,89 @@ footer{border-top:1px solid var(--border)}
             <h4 class="h4">The problem</h4>
             <div class="prose">
               <p>Friends already sort out shared costs in group chats. Then they leave the chat to pay in one app, check their balance in another, and save toward trips in a spreadsheet.</p>
-              <p>Every switch is a chance to drop the task, forget who owes what, or overspend without noticing.</p>
+              <p>Banking apps show up after the money is spent. The decision itself happens somewhere else, and every switch is a chance to drop the task, forget who owes what, or overspend without noticing.</p>
             </div>
           </div>
           <div>
-            <h4 class="h4">What I designed</h4>
-            <ul class="ticks">
-              <li><strong>Split</strong> turns a message about a shared bill into a payment request inside iMessage.</li>
-              <li><strong>Safe</strong> estimates what's safe to spend and shows a short nudge right before a purchase.</li>
-              <li><strong>Together</strong> runs group savings goals inside the group chat, with progress and milestones.</li>
-              <li>All three share one account and data layer, so they hand off to each other. If Safe warns that dinner will put you over budget and you go anyway, Split offers to share the cost.</li>
-            </ul>
+            <h4 class="h4">My approach</h4>
+            <div class="prose">
+              <p>Instead of one more app, I designed three small tools that each appear at a specific moment: right after a shared bill, right before a purchase, and while a group plans a trip.</p>
+              <p>They sit on one shared layer, so each can pass the user to the next one at the right time. Every tool shows its suggestion, offers a choice, and gets out of the way.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platform diagram -->
+        <div class="platform">
+          <h4 class="h4">Three products, one shared layer</h4>
+          <ul class="plat-row">
+            <li class="plat-card">
+              <span class="plat-kind">Reactive · iMessage</span>
+              <b>Flow Split</b>
+              <span>Turns "dinner was $94.50, split 3 ways" into a payment request without leaving the chat.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Proactive · lock screen</span>
+              <b>Flow Safe</b>
+              <span>Forecasts what's safe to spend over the next 7, 14 and 30 days and nudges before a purchase.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Social · group chat</span>
+              <b>Flow Together</b>
+              <span>Group savings pots with scheduled contributions, milestones and opt-in accountability.</span>
+            </li>
+          </ul>
+          <div class="plat-base"><span class="plat-kind">Shared layer</span><span>Profiles</span><span>Bank and card APIs</span><span>Prediction</span><span>Notifications</span><span>Security</span></div>
+
+          <h4 class="h4" style="margin-top:2rem">Handoffs between products</h4>
+          <ol class="handoffs">
+            <li><span class="hf-route"><span>Safe</span><i aria-hidden="true">→</i><span>Split</span></span><span class="hf-text">Safe warns that dinner will put you over budget. You go anyway, so Split offers: "Split this $85 to stay on track?"</span></li>
+            <li><span class="hf-route"><span>Together</span><i aria-hidden="true">→</i><span>Split</span></span><span class="hf-text">The trip pot hits $2,000 but the booking is $2,340. Split offers to divide the $340 gap four ways.</span></li>
+            <li><span class="hf-route"><span>Split</span><i aria-hidden="true">→</i><span>Safe</span></span><span class="hf-text">You and Sarah split costs eight times a month, so Flow suggests a shared expense pot instead.</span></li>
+          </ol>
+        </div>
+
+        <!-- Product tabs -->
+        <div class="tour">
+          <h4 class="h4">Inside each product</h4>
+          <div class="tabs" role="tablist" aria-label="Flow products">
+            <button class="tab" role="tab" id="tab-split" aria-controls="panel-split" aria-selected="true">Split</button>
+            <button class="tab" role="tab" id="tab-safe" aria-controls="panel-safe" aria-selected="false" tabindex="-1">Safe</button>
+            <button class="tab" role="tab" id="tab-together" aria-controls="panel-together" aria-selected="false" tabindex="-1">Together</button>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-split" aria-labelledby="tab-split">
+            <figure class="feature-img">
+              <img src="./assets/flow-split-decline.jpg" width="925" height="967" loading="lazy" alt="Two Split Status screens side by side. Left: 2 of 3 paid, Devon's request not yet opened, with a prompt to send a gentle nudge. Right: Devon declined; a red banner says $31.50 is unsettled and no funds moved, with options to cover Devon's share, nudge again or cancel the split.">
+            </figure>
+            <div class="prose">
+              <p class="panel-title">Designing for "no"</p>
+              <p>Most payment flows are drawn for the happy path. I spent as much time on what happens when a friend doesn't pay.</p>
+              <p><strong>If someone hasn't opened the request,</strong> Flow doesn't nag them on its own. It asks the organizer whether to send a gentle nudge, because that's a social call, not a system one.</p>
+              <p><strong>If someone declines,</strong> the screen says plainly that no money moved and offers three ways out: cover their share, nudge again or cancel. Nothing is left half finished.</p>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-safe" aria-labelledby="tab-safe">
+            <figure class="feature-img">
+              <img src="./assets/flow-safe.jpg" width="1600" height="1380" loading="lazy" alt="Three Flow Safe nudge cards. About to overspend, via lock screen: Coffee puts you $12 over today's safe spend, with Skip it and I'm aware buttons. Friend invites to dinner, via iMessage inline: Based on rent due Friday, safe spend is $67, with Suggest cheaper spot. Paycheck deposited, via widget: $2,400 in, auto-saved $200, safe to spend $340 a week, with Adjust savings.">
+            </figure>
+            <div class="prose">
+              <p class="panel-title">A heads-up, not a lecture</p>
+              <p>Safe looks at recurring bills, income timing and upcoming plans to estimate what's safe to spend. It speaks up only at a decision point, and only where the person already is: the lock screen, an iMessage thread or a widget.</p>
+              <p>Every nudge comes with a way out, like "Skip it" or "I'm aware," and a useful alternative when there is one. The person stays in charge of the decision.</p>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-together" aria-labelledby="tab-together">
+            <figure class="feature-img">
+              <img src="./assets/flow-together.jpg" width="1600" height="860" loading="lazy" alt="Flow Together screen. A savings pot card for a Cabo spring break trip showing $1,240 of $2,000 saved, 62 percent, with each friend's contribution and Contribute and Boost Goal buttons, next to a four-step user flow.">
+            </figure>
+            <div class="prose">
+              <p class="panel-title">Saving as a group, inside the group</p>
+              <p>Anyone in a group chat can start a pot with a goal, amount and deadline. Friends contribute in one tap, on a schedule, or with spare-change round-ups.</p>
+              <p>Progress is celebrated at 25, 50 and 90 percent. Who paid what is opt-in, so the pot builds momentum without calling anyone out.</p>
+            </div>
           </div>
         </div>
 
@@ -296,38 +435,17 @@ footer{border-top:1px solid var(--border)}
           <h4 class="h4">Key decisions</h4>
           <ol class="dlist">
             <li><b>Build into the chat, not a new app.</b><span>The conversation is where the decision happens. The cost: Flow is limited by what each platform lets a third party show, so every card had to work in a small space.</span></li>
-            <li><b>Nudges you can wave off.</b><span>Each Safe nudge offers "Skip it" or "I'm aware." The warning informs the choice without blocking it, so people don't learn to ignore it.</span></li>
+            <li><b>Nudges you can wave off.</b><span>The warning informs the choice without blocking it, so people don't learn to tune it out.</span></li>
             <li><b>Celebrate progress, don't shame.</b><span>Together marks milestones and keeps each person's contribution opt-in, instead of calling out whoever is behind.</span></li>
-            <li><b>Show money status in words, not just color.</b><span>Paid, pending, waiting, declined and failed each get a label and an icon, not only teal, gold or red, so the status still reads for colorblind users and screen readers.</span></li>
+            <li><b>Show money status in words, not just color.</b><span>Paid, pending, waiting, declined and failed each get a label and an icon, so status still reads for colorblind users and screen readers.</span></li>
           </ol>
         </div>
 
-        <div class="feature">
-          <figure class="feature-img">
-            <img src="./assets/flow-split-decline.jpg" width="925" height="967" loading="lazy" alt="Two Split Status screens side by side. Left: 2 of 3 paid, Devon's request not yet opened, with a prompt to send a gentle nudge. Right: Devon declined; a red banner says $31.50 is unsettled and no funds moved, with options to cover Devon's share, nudge again or cancel the split.">
-          </figure>
-          <div>
-            <h4 class="h4">Designing for "no"</h4>
-            <div class="prose">
-              <p>Most payment flows are drawn for the happy path. I spent as much time on what happens when a friend doesn't pay.</p>
-              <p><strong>If someone hasn't opened the request,</strong> Flow doesn't nag them on its own. It asks the organizer whether to send a gentle nudge, because that's a social call, not a system one.</p>
-              <p><strong>If someone declines,</strong> the screen says plainly that no money moved and offers three ways out: cover their share, nudge again or cancel the split. Nothing is left stuck in a half-finished state.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <figure class="shot" style="margin-top:0">
-        <img src="./assets/flow-together.jpg" width="1600" height="860" loading="lazy" alt="Flow Together screen. A savings pot card for a Cabo spring break trip showing $1,240 of $2,000 saved, 62 percent, with each friend's contribution and Contribute and Boost Goal buttons, next to a four-step user flow.">
-        <figcaption>Flow Together: a group savings pot that lives in the trip's group chat.</figcaption>
-      </figure>
-
-      <div class="case-body">
         <div class="limits">
-          <p><strong>What exists and what doesn't.</strong> The full Split flow and its states in Figma, three clickable prototypes and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
+          <p><strong>What exists and what doesn't.</strong> Three clickable Figma prototypes, the full Split flow and its states, architecture docs and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
         </div>
         <div class="links">
-          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener">Click through the Split flow</a>
+          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener">Click through the Split flow <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn btn-o" href="https://flowbanking.netlify.app/" target="_blank" rel="noopener">Full case study</a>
           <a class="btn btn-o" href="https://www.figma.com/make/wkKulpcf5Upid6V0bKaK5L/Flow-Split-iOS-Prototype?fullscreen=1" target="_blank" rel="noopener">Prototype: Split</a>
           <a class="btn btn-o" href="https://www.figma.com/make/vSadqxByG8BfhBhh9dAe1x/Flow-Safe-Screen-Design?fullscreen=1" target="_blank" rel="noopener">Prototype: Safe</a>
@@ -431,7 +549,7 @@ footer{border-top:1px solid var(--border)}
         <div><dt>Research</dt><dd>Usability testing, heuristic evaluation, personas, surveys in Qualtrics, Maze</dd></div>
         <div><dt>Build</dt><dd>React, JavaScript, HTML/CSS, Python, Git</dd></div>
         <div><dt>Learning now</dt><dd>LLM APIs, tool calling, evaluation sets, WCAG 2.2</dd></div>
-        <div><dt>Education</dt><dd>B.S. Computer Science, San Francisco State, Dec 2026 · Dean's List<br>Google UX Design Certificate, 2025</dd></div>
+        <div><dt>Education</dt><dd>B.S. Computer Science, San Francisco State, May 2027 · Dean's List<br>Google UX Design Certificate, 2025</dd></div>
       </dl>
     </div>
   </div>
@@ -491,7 +609,28 @@ footer{border-top:1px solid var(--border)}
 
 <script>
 (function(){
-  var nav=document.getElementById('nav'),tog=document.getElementById('navToggle'),links=document.getElementById('navLinks');
+  var nav=document.getElementById('nav'),tog=document.getElementById('navToggle'),links=document.getElementById('navLinks'),bar=document.getElementById('progress');
+
+  // Product tabs (Flow): click or arrow keys; panels fade in
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role="tab"]'));
+  function selectTab(t,focus){
+    tabs.forEach(function(x){
+      var on=x===t,p=document.getElementById(x.getAttribute('aria-controls'));
+      x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+      p.hidden=!on;p.classList.toggle('enter',on);
+    });
+    if(focus)t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){selectTab(t)});
+    t.addEventListener('keydown',function(e){
+      var k=e.key,n=null;
+      if(k==='ArrowRight')n=tabs[(i+1)%tabs.length];else if(k==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(k==='Home')n=tabs[0];else if(k==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();selectTab(n,true)}
+    });
+  });
+  if(tabs.length)selectTab(tabs[0]);
   document.getElementById('yr').textContent=new Date().getFullYear();
 
   function setMenu(open){links.classList.toggle('open',open);tog.setAttribute('aria-expanded',open);tog.setAttribute('aria-label',open?'Close menu':'Open menu')}
@@ -503,15 +642,16 @@ footer{border-top:1px solid var(--border)}
   window.addEventListener('scroll',function(){
     if(ticking)return;ticking=true;
     requestAnimationFrame(function(){
-      var y=window.scrollY,cur='';
+      var y=window.scrollY,cur='',max=document.documentElement.scrollHeight-window.innerHeight;
       nav.classList.toggle('scrolled',y>40);
+      bar.style.transform='scaleX('+(max>0?Math.min(1,y/max):0)+')';
       ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.offsetTop-140<=y)cur=id});
       navA.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
       ticking=false;
     });
   },{passive:true});
 
-  var items=document.querySelectorAll('.reveal');
+  var items=document.querySelectorAll('.reveal,.dlist,.principles,.plat-row,.handoffs,.ticks,.next-list');
   if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('vis')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:0.06,rootMargin:'0px 0px -40px 0px'});
   items.forEach(function(el){io.observe(el)});
