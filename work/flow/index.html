@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow case study | Priyanshu Nada</title>
+<meta name="description" content="AI money tools for Gen Z that show up inside iMessage, Instagram and Uber at the moment someone is about to spend, instead of asking them to open a separate banking app.">
+<link rel="canonical" href="https://nadadesign.netlify.app/work/flow/">
+<meta property="og:title" content="Flow case study | Priyanshu Nada">
+<meta property="og:description" content="AI money tools for Gen Z that show up inside iMessage, Instagram and Uber at the moment someone is about to spend, instead of asking them to open a separate banking app.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nadadesign.netlify.app/work/flow/">
+<meta property="og:image" content="https://nadadesign.netlify.app/assets/preview/flow-b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":"/work/*"},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="../../#top">priyanshu<span>.</span>nada</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../../#work">Work</a></li>
+      <li><a href="../../#next">In progress</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../Priyanshu_Nada_Product_Design_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a class="btn-sm" href="../../#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="../../#work"><span aria-hidden="true">←</span> All work</a></nav>
+
+    <article class="case page" aria-labelledby="flow-title">
+      <div class="case-head">
+        <div class="case-kicker"><span class="case-num">01</span><span class="pill">Concept project</span><span class="pill">Fintech</span><span class="pill">Conversational AI</span></div>
+        <h1 class="case-title" id="flow-title" style="view-transition-name:t-flow">Flow: banking that disappears</h1>
+        <p class="case-lede">AI money tools for Gen Z that show up inside iMessage, Instagram and Uber at the moment someone is about to spend, instead of asking them to open a separate banking app.</p>
+        <dl class="case-meta">
+          <div><dt>My role</dt><dd>End to end: research, platform architecture, interaction design</dd></div>
+          <div><dt>Deliverables</dt><dd>21-screen clickable prototype across all three products, architecture docs, React case-study site</dd></div>
+          <div><dt>Surfaces</dt><dd>iMessage, lock screen, widgets</dd></div>
+          <div><dt>Status</dt><dd>Concept, not built for production</dd></div>
+        </dl>
+      </div>
+
+      <figure class="shot" style="view-transition-name:m-flow">
+        <div class="strip" tabindex="0" role="region" aria-label="Flow Split screens, scroll sideways to see all nine">
+          <img src="../../assets/flow-split-flow.jpg" width="3212" height="760" alt="Nine iPhone screens of the Flow Split flow, left to right: an iMessage group chat where Flow detects a $94.50 dinner bill and suggests a split; split details with Equal, Custom and Itemized options; Apple Pay confirming a $31.50 share; processing; split sent with $63.00 outstanding; live status at 2 of 3 paid with a nudge for the friend who hasn't opened it; a decline path with options to cover the share, nudge again or cancel; split settled; and a sheet of status chips and components.">
+        </div>
+        <figcaption>Flow Split, end to end: from "total was $94.50, splitting 3 ways" in a group chat to a settled split. Scroll sideways to see every screen.</figcaption>
+      </figure>
+
+      <div class="case-body">
+        <div class="cols">
+          <div>
+            <h4 class="h4">The problem</h4>
+            <div class="prose">
+              <p>Friends already sort out shared costs in group chats. Then they leave the chat to pay in one app, check their balance in another, and save toward trips in a spreadsheet.</p>
+              <p>Banking apps show up after the money is spent. The decision itself happens somewhere else, and every switch is a chance to drop the task, forget who owes what, or overspend without noticing.</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="h4">My approach</h4>
+            <div class="prose">
+              <p>Instead of one more app, I designed three small tools that each appear at a specific moment: right after a shared bill, right before a purchase, and while a group plans a trip.</p>
+              <p>They sit on one shared layer, so each can pass the user to the next one at the right time. Every tool shows its suggestion, offers a choice, and gets out of the way.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platform diagram -->
+        <div class="platform">
+          <h4 class="h4">Three products, one shared layer</h4>
+          <ul class="plat-row">
+            <li class="plat-card">
+              <span class="plat-kind">Reactive · iMessage</span>
+              <b>Flow Split</b>
+              <span>Turns "dinner was $94.50, split 3 ways" into a payment request without leaving the chat.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Proactive · lock screen</span>
+              <b>Flow Safe</b>
+              <span>Forecasts what's safe to spend over the next 7, 14 and 30 days and nudges before a purchase.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Social · group chat</span>
+              <b>Flow Together</b>
+              <span>Group savings pots with scheduled contributions, milestones and opt-in accountability.</span>
+            </li>
+          </ul>
+          <div class="plat-base"><span class="plat-kind">Shared layer</span><span>Profiles</span><span>Bank and card APIs</span><span>Prediction</span><span>Notifications</span><span>Security</span></div>
+
+          <h4 class="h4" style="margin-top:2rem">Handoffs between products</h4>
+          <ol class="handoffs">
+            <li><span class="hf-route"><span>Safe</span><i aria-hidden="true">→</i><span>Split</span></span><span class="hf-text">Safe warns that dinner will put you over budget. You go anyway, so Split offers: "Split this $85 to stay on track?"</span></li>
+            <li><span class="hf-route"><span>Together</span><i aria-hidden="true">→</i><span>Split</span></span><span class="hf-text">The trip pot hits $2,000 but the booking is $2,340. Split offers to divide the $340 gap four ways.</span></li>
+            <li><span class="hf-route"><span>Split</span><i aria-hidden="true">→</i><span>Safe</span></span><span class="hf-text">You and Sarah split costs eight times a month, so Flow suggests a shared expense pot instead.</span></li>
+          </ol>
+        </div>
+
+        <!-- Product tabs -->
+        <div class="tour">
+          <h4 class="h4">Inside each product</h4>
+          <div class="tabs" role="tablist" aria-label="Flow products">
+            <button class="tab" role="tab" id="tab-split" aria-controls="panel-split" aria-selected="true">Split</button>
+            <button class="tab" role="tab" id="tab-safe" aria-controls="panel-safe" aria-selected="false" tabindex="-1">Safe</button>
+            <button class="tab" role="tab" id="tab-together" aria-controls="panel-together" aria-selected="false" tabindex="-1">Together</button>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-split" aria-labelledby="tab-split">
+            <figure class="feature-img">
+              <img src="../../assets/flow-split-decline.jpg" width="925" height="967" loading="lazy" alt="Two Split Status screens side by side. Left: 2 of 3 paid, Devon's request not yet opened, with a prompt to send a gentle nudge. Right: Devon declined; a red banner says $31.50 is unsettled and no funds moved, with options to cover Devon's share, nudge again or cancel the split.">
+            </figure>
+            <div class="prose">
+              <p class="panel-title">Designing for "no"</p>
+              <p>Most payment flows are drawn for the happy path. I spent as much time on what happens when a friend doesn't pay.</p>
+              <p><strong>If someone hasn't opened the request,</strong> Flow doesn't nag them on its own. It asks the organizer whether to send a gentle nudge, because that's a social call, not a system one.</p>
+              <p><strong>If someone declines,</strong> the screen says plainly that no money moved and offers three ways out: cover their share, nudge again or cancel. Nothing is left half finished.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-safe" aria-labelledby="tab-safe">
+            <figure class="feature-img">
+              <img src="../../assets/flow-safe-screens.jpg" width="1600" height="1130" loading="lazy" alt="Three Flow Safe screens. A lock-screen notification: Coffee puts you $12 over today's safe spend, with Skip it, I'm aware and Why am I seeing this. The Safe to spend screen: $27 today, a 7-day balance forecast that dips on rent day, and upcoming rent, bills and paycheck. The Why $27 today sheet: balance $1,482 minus rent, bills and a savings goal leaves $192 for 7 days, with confidence levels and buttons to correct a bill, paycheck date or account.">
+            </figure>
+            <div class="prose">
+              <p class="panel-title">A heads-up that shows its math</p>
+              <p>Safe forecasts what's safe to spend from recurring bills, income timing and a savings goal, and speaks up only at a decision point, where the person already is: the lock screen, an iMessage thread or a widget.</p>
+              <p><strong>Every number explains itself.</strong> "Why $27 today" walks through the math, says how sure Flow is about each part, and lets people fix a wrong bill or paycheck date on the spot.</p>
+              <p><strong>Every nudge can be waved off,</strong> tuned or paused. When Flow learns from skipped nudges, it says what it changed and offers an undo.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-together" aria-labelledby="tab-together">
+            <figure class="feature-img">
+              <img src="../../assets/flow-together-screens.jpg" width="1600" height="1130" loading="lazy" alt="Three Flow Together screens. Creating a pot: Cabo Spring Break, $2,000 by March 14, four members from the chat, $50 auto-added each Monday, and a switch to show what I've paid that is off by default. The group chat at 90 percent with a celebration for everyone and a private card only you see saying you're $40 behind, with ways to catch up. Releasing the pot: $2,000 to Sarah for the house, with Sarah and Marcus approved, your turn, and Alex not yet, since 3 of 4 must approve.">
+            </figure>
+            <div class="prose">
+              <p class="panel-title">Saving as a group, without calling anyone out</p>
+              <p>Flow notices a group goal in the chat and offers a pot. Friends choose to join, then contribute on a schedule or with round-ups.</p>
+              <p><strong>Celebrate in public, nudge in private.</strong> The group sees progress and milestones. Each person's amount stays private unless they share it, and "you're $40 behind" goes only to the person it's about.</p>
+              <p><strong>Money moves only when the group agrees.</strong> Spending the pot needs 3 of 4 approvals, anyone can cancel, and requests expire in 48 hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="decisions">
+          <h4 class="h4">Key decisions</h4>
+          <ol class="dlist">
+            <li><b>Build into the chat, not a new app.</b><span>The conversation is where the decision happens. The cost: Flow is limited by what each platform lets a third party show, so every card had to work in a small space.</span></li>
+            <li><b>Explain the number, then let people fix it.</b><span>A forecast people can't question is one they stop trusting. Safe shows its math and confidence, and corrections update it right away.</span></li>
+            <li><b>Celebrate progress, don't shame.</b><span>Together marks milestones and keeps each person's contribution opt-in, instead of calling out whoever is behind.</span></li>
+            <li><b>Show money status in words, not just color.</b><span>Paid, pending, waiting, declined and failed each get a label and an icon, so status still reads for colorblind users and screen readers.</span></li>
+          </ol>
+        </div>
+
+        <div class="limits">
+          <p><strong>What exists and what doesn't.</strong> A 21-screen clickable prototype covering Split, Safe and Together, three earlier Figma prototypes, architecture docs and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
+        </div>
+        <div class="links">
+          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener" aria-label="Prototype: Split, row 1 of the Flow prototype">Prototype: Split <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener" aria-label="Prototype: Safe, row 2 of the Flow prototype">Prototype: Safe <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener" aria-label="Prototype: Together, row 3 of the Flow prototype">Prototype: Together <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-o" href="https://flowbanking.netlify.app/" target="_blank" rel="noopener">Full case study</a>
+          <a class="btn btn-o" href="https://github.com/Priyanshunada04/Flow" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <p class="label" style="margin-top:3.5rem">Next project</p>
+    <a class="nextp" href="../../work/capstack/" aria-label="Capstack: funding data founders can trust. Read the case study">
+        <div class="pmedia" style="view-transition-name:m-capstack">
+          <img class="a" src="../../assets/preview/capstack-a.jpg" width="1200" height="750" loading="lazy" alt="">
+          <img class="b" src="../../assets/preview/capstack-b.jpg" width="1200" height="750" loading="lazy" alt="">
+          <span class="phint" aria-hidden="true"><i></i><span class="s1">Before: the agent proposes a rule change</span><span class="s2">After: a curator verifies it, with the source</span></span>
+        </div>
+        <div>
+          <div class="pkick"><span class="case-num">02</span><span class="pill">AI redesign · Human in the loop</span></div>
+          <h2 class="ptitle" style="view-transition-name:t-capstack">Capstack: funding data founders can trust</h2>
+          <p class="pline">A funding directory kept current by an AI agent, with a person approving anything that could cost a founder a deadline.</p>
+          <div class="pfoot"><span>Research, design, front-end · 4 min read</span><span class="pgo">Read case study <span class="arr" aria-hidden="true">→</span></span></div>
+        </div>
+      </a>
+    <div class="mini-contact">
+      <p>Hiring for product design or AI/UX? I'd love to talk.</p>
+      <a class="btn btn-a" href="mailto:pnada.jobs@gmail.com">pnada.jobs@gmail.com</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© <span id="yr">2026</span> Priyanshu Nada</span>
+    <nav aria-label="Footer">
+      <a href="mailto:pnada.jobs@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/priyanshunada" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Priyanshunada04" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../Priyanshu_Nada_Product_Design_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>
