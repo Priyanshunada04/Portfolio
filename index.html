@@ -160,6 +160,7 @@ footer{border-top:1px solid var(--border)}
 /* Flow platform diagram */
 .platform{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
 .plat-row{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.8rem}
+.plat-row.steps4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .plat-card{border:1px solid var(--border2);border-radius:12px;background:var(--bg);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:0.35rem}
 .plat-card b{font-family:var(--serif);font-weight:400;font-size:1.3rem}
 .plat-card span:last-child{font-size:0.9rem;color:var(--t2);font-weight:300;line-height:1.55}
@@ -232,6 +233,7 @@ footer{border-top:1px solid var(--border)}
 
 /* Responsive */
 @media (max-width:960px){
+  .plat-row.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .case-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
   .principles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .next-list li{grid-template-columns:2.5rem minmax(0,1fr) auto;gap:0.4rem 1rem}
@@ -252,6 +254,7 @@ footer{border-top:1px solid var(--border)}
   .case-body{padding:1.6rem 1.3rem 1.8rem}
   .cols,.dlist,.about-grid,.feature,.panel,.plat-row{grid-template-columns:1fr}
   .plat-base::before{display:none}
+  .plat-row.steps4{grid-template-columns:1fr}
   .handoffs li{grid-template-columns:1fr;gap:0.4rem}
   .panel.wide .prose{grid-template-columns:1fr;gap:0.8rem}
   .panel{gap:1.4rem}
@@ -464,20 +467,20 @@ footer{border-top:1px solid var(--border)}
     <!-- Capstack -->
     <article class="case reveal" aria-labelledby="cap-title">
       <div class="case-head">
-        <div class="case-kicker"><span class="case-num">02</span><span class="pill">UX research</span><span class="pill">Working prototype</span><span class="pill">Startup funding</span></div>
-        <h3 class="case-title" id="cap-title">Capstack</h3>
-        <p class="case-lede">A funding directory that tells founders in seconds whether they qualify, instead of making them read a 50-page PDF to find out.</p>
+        <div class="case-kicker"><span class="case-num">02</span><span class="pill">AI redesign</span><span class="pill">Human in the loop</span><span class="pill">Startup funding</span></div>
+        <h3 class="case-title" id="cap-title">Capstack: funding data founders can trust</h3>
+        <p class="case-lede">A funding directory kept current by an AI agent, with people in the loop for anything that could cost a founder a deadline.</p>
         <dl class="case-meta">
           <div><dt>My role</dt><dd>UX research, product design and front-end</dd></div>
-          <div><dt>Methods</dt><dd>Secondary research, personas, journey map, heuristic evaluation</dd></div>
-          <div><dt>Built with</dt><dd>JavaScript, localStorage, Google sign-in</dd></div>
-          <div><dt>Status</dt><dd>Working prototype with sample data</dd></div>
+          <div><dt>Version 1</dt><dd>Built: directory, match scores, eligibility checklist, tracker</dd></div>
+          <div><dt>Version 2</dt><dd>Designed: AI-maintained listings, curator review, trust rules</dd></div>
+          <div><dt>Status</dt><dd>v1 working prototype with sample data · v2 not yet built or tested</dd></div>
         </dl>
       </div>
 
       <figure class="shot">
-        <img src="./assets/capstack-directory.jpg" width="1600" height="984" loading="lazy" alt="Capstack directory sorted by best match. Two listings, EIC Accelerator 2026 and Y Combinator S26, each with funding amount, type, region, stage, a green match percentage and a deadline.">
-        <figcaption>The directory, sorted by best match. Hover any score to see why it fits.</figcaption>
+        <img src="./assets/capstack-listing.jpg" width="1600" height="909" loading="lazy" alt="A Capstack listing for the fictional Bayview Deep Tech Grant. A Key facts table shows each field with its value, source and status: the deadline May 5, moved from May 19 and verified by a curator; the amount and equity verified; a new under $2M raised rule marked AI-read, not verified. Below it, a quote from the official page highlights the deadline, an eligibility checklist shows 3 passes and 1 unverified item, and a side panel shows change history and a form to report a problem.">
+        <figcaption>Every fact shows where it came from, when it was checked, and whether a person has verified it.</figcaption>
       </figure>
 
       <div class="case-body">
@@ -485,36 +488,84 @@ footer{border-top:1px solid var(--border)}
           <div>
             <h4 class="h4">The problem</h4>
             <div class="prose">
-              <p>Founders look for grants and accelerators across scattered directories, many of them out of date. The eligibility rules sit deep inside long documents, so judging fit for a single opportunity can take half an hour.</p>
-              <p>Then they track applications across Notion, spreadsheets and email, and deadlines slip.</p>
+              <p>Founders look for grants and accelerators across scattered directories, many of them out of date. Eligibility rules sit deep in long documents, and deadlines move.</p>
+              <p>Version 1 made listings easy to scan, but it ducked the real question: <strong>where does the data come from, and why should a founder trust it?</strong></p>
             </div>
           </div>
           <div>
-            <h4 class="h4">What I did</h4>
-            <ul class="ticks">
-              <li>Reviewed 8 funding directories and founder forums, and turned the patterns into 2 personas and a journey map.</li>
-              <li>Designed an eligibility checklist for every listing, so fit is visible at a glance.</li>
-              <li>Built a match score from sector, stage and region, plus a kanban tracker with deadline warnings.</li>
-              <li>Ran a heuristic evaluation of my own build against Nielsen's 10 heuristics and fixed the critical issues.</li>
-            </ul>
+            <h4 class="h4">The redesign</h4>
+            <div class="prose">
+              <p>An AI agent checks official program pages every day and proposes changes. How much it can do on its own depends on what a mistake would cost a founder.</p>
+              <p>Founders see what's verified, what's only been read by AI, and what's still in question. Curators review anything high-risk before it goes live.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform">
+          <h4 class="h4">How a listing stays current</h4>
+          <ol class="plat-row steps4">
+            <li class="plat-card"><span class="plat-kind">1 · Agent</span><b>Reads</b><span>Checks official pages and program feeds daily, and notes the exact sentence each fact came from.</span></li>
+            <li class="plat-card"><span class="plat-kind">2 · Rules</span><b>Sorts by risk</b><span>Typos publish on their own. Deadlines, amounts and eligibility wait for a person. Closing a program is never automatic.</span></li>
+            <li class="plat-card"><span class="plat-kind">3 · Curator</span><b>Decides</b><span>Sees a before-and-after diff, the source quote, the agent's confidence and who's affected, then approves, edits, rejects or asks the program.</span></li>
+            <li class="plat-card"><span class="plat-kind">4 · Founder</span><b>Knows</b><span>Sees a status label on every fact, a weekly "what changed," and can report a mistake straight into the queue.</span></li>
+          </ol>
+        </div>
+
+        <div class="tour">
+          <h4 class="h4">Inside the redesign</h4>
+          <div class="tabs" role="tablist" aria-label="Capstack screens">
+            <button class="tab" role="tab" id="tab-digest" aria-controls="panel-digest" aria-selected="true">Founder digest</button>
+            <button class="tab" role="tab" id="tab-review" aria-controls="panel-review" aria-selected="false" tabindex="-1">Curator review</button>
+            <button class="tab" role="tab" id="tab-rules" aria-controls="panel-rules" aria-selected="false" tabindex="-1">Trust rules</button>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-digest" aria-labelledby="tab-digest">
+            <figure class="feature-img"><img src="./assets/capstack-digest.jpg" width="1600" height="947" loading="lazy" alt="What changed this week. Needs your attention: Bayview's deadline moved earlier from May 19 to May 5, 28 days from today. New matches: one verified program and one AI-read program still under review. We couldn't confirm: Meridian lists two different deadlines and Capstack won't guess. Paused: Cobalt paused applications, confirmed with its team. A side panel lets founders choose which changes to be told about."></figure>
+            <div class="prose">
+              <p class="panel-title">Tell founders what changed, with proof</p>
+              <p>Instead of vague alerts, a weekly digest sorted by what matters: deadlines that moved, new matches, and things Capstack couldn't confirm.</p>
+              <p><strong>Every change cites its source.</strong> Unverified listings are labeled, and founders choose whether to see them before review.</p>
+              <p><strong>When sources disagree, Capstack says so</strong> and tells founders to plan for the earlier date, rather than picking one.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-review" aria-labelledby="tab-review">
+            <figure class="feature-img"><img src="./assets/capstack-review.jpg" width="1600" height="709" loading="lazy" alt="Curator review queue. On the left, items needing a person: a high-risk eligibility change for Bayview, a new Northstar listing, a Meridian deadline conflict, a founder report about Harbor's amount, and a Cobalt closure marked never automatic. On the right, the selected change shows live versus proposed eligibility, the source quote from the guidelines PDF, the agent's medium confidence, why it needs a person, and that 38 founders would be notified, with Approve, Edit then approve, Ask the program and Reject buttons."></figure>
+            <div class="prose">
+              <p class="panel-title">Give the human enough to decide fast</p>
+              <p>Each proposed change shows the before and after, the exact source quote, and the agent's confidence with a reason, not just a score.</p>
+              <p><strong>It also shows the stakes:</strong> how many founders are tracking it and how many might no longer qualify.</p>
+              <p><strong>Every decision is logged by name</strong> and can be undone for 7 days. Founder reports jump the queue.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-rules" aria-labelledby="tab-rules">
+            <figure class="feature-img"><img src="./assets/capstack-rules.jpg" width="1600" height="885" loading="lazy" alt="Trust rules table. Wording, typos and logos: the agent decides and logs it. New listings: shown as AI-read, then a curator. Deadline, amount and eligibility: a curator approves. Sources disagree: ask the program. Closing or removing a program: never automatic. Below, safety settings and the three status labels founders see: verified, AI-read and sources disagree."></figure>
+            <div class="prose">
+              <p class="panel-title">Autonomy matched to the cost of a mistake</p>
+              <p>The agent's freedom shrinks as the stakes rise. A typo fix publishes on its own. A deadline needs a person.</p>
+              <p><strong>Closing a program is never automatic,</strong> because a wrong "closed" hides real money from founders, which is worse than a stale "open."</p>
+              <p>The status labels founders see each pair an icon with words, so they don't rely on color alone.</p>
+            </div>
           </div>
         </div>
 
         <div class="decisions">
           <h4 class="h4">Key decisions</h4>
           <ol class="dlist">
-            <li><b>Explain every score.</b><span>A bare "91% match" asks for blind trust. Each score now shows up to three reasons, such as "Stage: Seed ✓", so founders can check it against what they know.</span></li>
-            <li><b>Ask three questions up front.</b><span>New visitors landed in a directory with no context. A short onboarding (sector, stage, region) orients them and feeds the match score at the same time.</span></li>
-            <li><b>Design the empty tracker.</b><span>A blank kanban board gives no reason to start. I replaced it with a three-step guide and an example card.</span></li>
-            <li><b>Checklist over summary.</b><span>Eligibility shows as pass or fail lines, not a paragraph, because "Do I qualify?" is a yes-or-no question.</span></li>
+            <li><b>Risk-tiered autonomy.</b><span>The agent does more where mistakes are cheap and less where they cost a founder money or a deadline.</span></li>
+            <li><b>Show the source, not just the answer.</b><span>Each fact links to the sentence it came from, so founders and curators can check it in seconds.</span></li>
+            <li><b>Never guess when sources disagree.</b><span>Showing both dates and asking the program is slower, but it's honest, and founders can plan around it.</span></li>
+            <li><b>Explain every match score.</b><span>Carried over from v1: a bare "91% match" asks for blind trust, so each score lists the reasons behind it.</span></li>
           </ol>
         </div>
 
         <div class="limits">
-          <p><strong>The biggest gap.</strong> I designed this without interviewing founders, and the listings are sample data. The next step is 5 to 8 moderated sessions with real founders to see whether they finish the core tasks and actually trust the scores.</p>
+          <p><strong>What exists and what doesn't.</strong> Version 1 is a working prototype with sample data. Version 2 is a 6-screen design with fictional programs; the agent isn't built and nothing has been tested with founders yet. Next: test the agent on 30 real program pages to measure how often it reads deadlines and eligibility correctly, then run sessions with 5 founders and plant one wrong deadline to see whether the labels help them catch it.</p>
         </div>
         <div class="links">
-          <a class="btn btn-o" href="https://priyanshunada04.github.io/Capstack/" target="_blank" rel="noopener">Live prototype</a>
+          <a class="btn btn-a" href="https://claude.ai/artifact/3c6dyqtgvCT89zu1waJvG7" target="_blank" rel="noopener">Click through the redesign <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-o" href="https://priyanshunada04.github.io/Capstack/" target="_blank" rel="noopener">Version 1 prototype</a>
           <a class="btn btn-o" href="https://github.com/Priyanshunada04/Capstack" target="_blank" rel="noopener">Code</a>
         </div>
       </div>
@@ -618,9 +669,10 @@ footer{border-top:1px solid var(--border)}
   var nav=document.getElementById('nav'),tog=document.getElementById('navToggle'),links=document.getElementById('navLinks'),bar=document.getElementById('progress');
 
   // Product tabs (Flow): click or arrow keys; panels fade in
+  function groupOf(t){return [].slice.call(t.closest('[role="tablist"]').querySelectorAll('[role="tab"]'))}
   var tabs=[].slice.call(document.querySelectorAll('.tabs [role="tab"]'));
   function selectTab(t,focus){
-    tabs.forEach(function(x){
+    groupOf(t).forEach(function(x){
       var on=x===t,p=document.getElementById(x.getAttribute('aria-controls'));
       x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
       p.hidden=!on;p.classList.toggle('enter',on);
@@ -630,13 +682,13 @@ footer{border-top:1px solid var(--border)}
   tabs.forEach(function(t,i){
     t.addEventListener('click',function(){selectTab(t)});
     t.addEventListener('keydown',function(e){
-      var k=e.key,n=null;
-      if(k==='ArrowRight')n=tabs[(i+1)%tabs.length];else if(k==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
-      else if(k==='Home')n=tabs[0];else if(k==='End')n=tabs[tabs.length-1];
+      var g=groupOf(t),j=g.indexOf(t),k=e.key,n=null;
+      if(k==='ArrowRight')n=g[(j+1)%g.length];else if(k==='ArrowLeft')n=g[(j-1+g.length)%g.length];
+      else if(k==='Home')n=g[0];else if(k==='End')n=g[g.length-1];
       if(n){e.preventDefault();selectTab(n,true)}
     });
   });
-  if(tabs.length)selectTab(tabs[0]);
+  [].slice.call(document.querySelectorAll('.tabs')).forEach(function(l){var f=l.querySelector('[role="tab"]');if(f)selectTab(f)});
   document.getElementById('yr').textContent=new Date().getFullYear();
 
   function setMenu(open){links.classList.toggle('open',open);tog.setAttribute('aria-expanded',open);tog.setAttribute('aria-label',open?'Close menu':'Open menu')}
