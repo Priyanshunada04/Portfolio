@@ -21,7 +21,8 @@ Live: https://nadadesign.netlify.app/
 ```
 ├── index.html                                ← the whole site, no build step
 ├── assets/                                   ← case-study screenshots
-│   ├── flow-split.jpg
+│   ├── flow-split-flow.jpg       ← 9-screen Flow Split flow (from Figma)
+│   ├── flow-split-decline.jpg    ← status + decline path screens
 │   ├── flow-together.jpg
 │   └── capstack-directory.jpg
 ├── Priyanshu_Nada_Product_Design_Resume.pdf

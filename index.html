@@ -9,7 +9,7 @@
 <meta property="og:description" content="I design AI that people can check, correct and trust. Case studies: Flow and Capstack.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nadadesign.netlify.app/">
-<meta property="og:image" content="https://nadadesign.netlify.app/assets/flow-split.jpg">
+<meta property="og:image" content="https://nadadesign.netlify.app/assets/flow-split-decline.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,7 +112,10 @@ section{padding:5.5rem 0}
 .limits p{font-size:0.95rem;color:var(--t2);font-weight:300}
 .limits strong{color:var(--t1);font-weight:500}
 .links{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem}
-.shot-pair{display:grid;grid-template-columns:1fr;gap:0}
+.strip{overflow-x:auto;background:#e9e8e3;scrollbar-color:var(--border2) var(--bg3)}
+.strip img{width:auto;max-width:none;height:440px}
+.feature{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:2.5rem;align-items:center;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.feature-img{border-radius:12px;overflow:hidden;border:1px solid var(--border)}
 
 /* In progress */
 .next-list{list-style:none;margin-top:2.5rem;border-top:1px solid var(--border)}
@@ -182,7 +185,9 @@ footer{border-top:1px solid var(--border)}
   .case-head{padding:1.6rem 1.3rem 0}
   .shot{margin:1.5rem 1.3rem 0}
   .case-body{padding:1.6rem 1.3rem 1.8rem}
-  .cols,.dlist,.about-grid{grid-template-columns:1fr}
+  .cols,.dlist,.about-grid,.feature{grid-template-columns:1fr}
+  .feature{gap:1.5rem}
+  .strip img{height:340px}
   .cols{gap:1.8rem}
   .about-grid{gap:2.2rem}
   .principles{grid-template-columns:1fr}
@@ -254,15 +259,17 @@ footer{border-top:1px solid var(--border)}
         <p class="case-lede">Money tools for Gen Z that live inside the group chats where shared costs already get talked about, instead of in yet another banking app.</p>
         <dl class="case-meta">
           <div><dt>My role</dt><dd>Product designer, from research to prototype</dd></div>
-          <div><dt>Deliverables</dt><dd>3 Figma prototypes and a React case-study site</dd></div>
+          <div><dt>Deliverables</dt><dd>9-screen Split flow with states, 3 Figma prototypes, React case-study site</dd></div>
           <div><dt>Surfaces</dt><dd>iMessage, lock screen, widgets</dd></div>
           <div><dt>Status</dt><dd>Concept, not built for production</dd></div>
         </dl>
       </div>
 
       <figure class="shot">
-        <img src="./assets/flow-split.jpg" width="1600" height="834" loading="lazy" alt="Flow Split screen. On the left, a five-step user flow from entry point to settlement tracking. On the right, an iMessage group chat where a message about a $94.50 dinner becomes a card showing $31.50 each for three people, with Adjust and Send Request buttons.">
-        <figcaption>Flow Split: "dinner was $94.50, split 3 ways?" turns into a payment card without leaving the chat.</figcaption>
+        <div class="strip" tabindex="0" role="region" aria-label="Flow Split screens, scroll sideways to see all nine">
+          <img src="./assets/flow-split-flow.jpg" width="3212" height="760" alt="Nine iPhone screens of the Flow Split flow, left to right: an iMessage group chat where Flow detects a $94.50 dinner bill and suggests a split; split details with Equal, Custom and Itemized options; Apple Pay confirming a $31.50 share; processing; split sent with $63.00 outstanding; live status at 2 of 3 paid with a nudge for the friend who hasn't opened it; a decline path with options to cover the share, nudge again or cancel; split settled; and a sheet of status chips and components.">
+        </div>
+        <figcaption>Flow Split, end to end: from "total was $94.50, splitting 3 ways" in a group chat to a settled split, including the decline path. Scroll sideways to see every screen.</figcaption>
       </figure>
 
       <div class="case-body">
@@ -280,7 +287,7 @@ footer{border-top:1px solid var(--border)}
               <li><strong>Split</strong> turns a message about a shared bill into a payment request inside iMessage.</li>
               <li><strong>Safe</strong> estimates what's safe to spend and shows a short nudge right before a purchase.</li>
               <li><strong>Together</strong> runs group savings goals inside the group chat, with progress and milestones.</li>
-              <li>All three share one account and data layer, so they can hand off to each other.</li>
+              <li>All three share one account and data layer, so they hand off to each other. If Safe warns that dinner will put you over budget and you go anyway, Split offers to share the cost.</li>
             </ul>
           </div>
         </div>
@@ -291,8 +298,22 @@ footer{border-top:1px solid var(--border)}
             <li><b>Build into the chat, not a new app.</b><span>The conversation is where the decision happens. The cost: Flow is limited by what each platform lets a third party show, so every card had to work in a small space.</span></li>
             <li><b>Nudges you can wave off.</b><span>Each Safe nudge offers "Skip it" or "I'm aware." The warning informs the choice without blocking it, so people don't learn to ignore it.</span></li>
             <li><b>Celebrate progress, don't shame.</b><span>Together marks milestones and keeps each person's contribution opt-in, instead of calling out whoever is behind.</span></li>
-            <li><b>Let the modules talk.</b><span>If Safe warns that dinner will put you over budget and you go anyway, Split offers to share the cost. One flow leads into the next.</span></li>
+            <li><b>Show money status in words, not just color.</b><span>Paid, pending, waiting, declined and failed each get a label and an icon, not only teal, gold or red, so the status still reads for colorblind users and screen readers.</span></li>
           </ol>
+        </div>
+
+        <div class="feature">
+          <figure class="feature-img">
+            <img src="./assets/flow-split-decline.jpg" width="925" height="967" loading="lazy" alt="Two Split Status screens side by side. Left: 2 of 3 paid, Devon's request not yet opened, with a prompt to send a gentle nudge. Right: Devon declined; a red banner says $31.50 is unsettled and no funds moved, with options to cover Devon's share, nudge again or cancel the split.">
+          </figure>
+          <div>
+            <h4 class="h4">Designing for "no"</h4>
+            <div class="prose">
+              <p>Most payment flows are drawn for the happy path. I spent as much time on what happens when a friend doesn't pay.</p>
+              <p><strong>If someone hasn't opened the request,</strong> Flow doesn't nag them on its own. It asks the organizer whether to send a gentle nudge, because that's a social call, not a system one.</p>
+              <p><strong>If someone declines,</strong> the screen says plainly that no money moved and offers three ways out: cover their share, nudge again or cancel the split. Nothing is left stuck in a half-finished state.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -303,7 +324,7 @@ footer{border-top:1px solid var(--border)}
 
       <div class="case-body">
         <div class="limits">
-          <p><strong>What exists and what doesn't.</strong> Three clickable Figma prototypes and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
+          <p><strong>What exists and what doesn't.</strong> The full Split flow and its states in Figma, three clickable prototypes and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
         </div>
         <div class="links">
           <a class="btn btn-o" href="https://flowbanking.netlify.app/" target="_blank" rel="noopener">Full case study</a>
