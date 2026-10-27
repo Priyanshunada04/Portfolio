@@ -7,7 +7,7 @@ Live: https://nadadesign.netlify.app/
 ## Case studies
 
 - **[Flow](https://flowbanking.netlify.app/)**: money tools for Gen Z that live inside group chats. Concept project with three Figma prototypes and a React case-study site.
-- **Capstack**: funding data founders can trust. v1 is a [working prototype](https://priyanshunada04.github.io/Capstack/) with sample data; v2 is a designed redesign where an AI agent keeps listings current and curators review high-risk changes.
+- **Capstack**: funding data founders can trust. A designed prototype where an AI agent keeps listings current and curators review high-risk changes.
 
 ## In progress
 
@@ -25,7 +25,7 @@ Live: https://nadadesign.netlify.app/
 │   ├── flow-split-decline.jpg    ← status + decline path screens
 │   ├── flow-safe-screens.jpg     ← Safe screens (Claude Design prototype)
 │   ├── flow-together-screens.jpg ← Together screens (Claude Design prototype)
-│   ├── capstack-listing.jpg      ← Capstack v2 screens (Claude Design prototype)
+│   ├── capstack-listing.jpg      ← Capstack screens (Claude Design prototype)
 │   ├── capstack-digest.jpg
 │   ├── capstack-review.jpg
 │   └── capstack-rules.jpg
