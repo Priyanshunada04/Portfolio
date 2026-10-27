@@ -8,6 +8,7 @@ Live: https://nadadesign.netlify.app/
 
 - **[Flow](https://flowbanking.netlify.app/)**: money tools for Gen Z that live inside group chats. Concept project with three Figma prototypes and a React case-study site.
 - **Capstack**: funding data founders can trust. A designed prototype where an AI agent keeps listings current and curators review high-risk changes.
+- **Closet**: an AI wardrobe for busy students. Outfits from clothes they own, picked from their calendar and the weather, with every reason sourced and correctable. Clickable prototype, Figma file and design spec.
 
 ## In progress
 
@@ -28,7 +29,12 @@ Live: https://nadadesign.netlify.app/
 │   ├── capstack-listing.jpg      ← Capstack screens (Claude Design prototype)
 │   ├── capstack-digest.jpg
 │   ├── capstack-review.jpg
-│   └── capstack-rules.jpg
+│   ├── capstack-rules.jpg
+│   ├── closet-flow.jpg           ← 8-screen Closet strip (Claude Design prototype)
+│   ├── closet-explain.jpg        ← reasons, sources, confidence
+│   ├── closet-correct.jpg        ← dress-code fix, Not this, adjusted pick
+│   ├── closet-edges.jpg          ← no events, laundry day, offline
+│   └── closet-setup.jpg          ← capture, tag review, privacy
 ├── Priyanshu_Nada_Product_Design_Resume.pdf
 └── README.md
 ```

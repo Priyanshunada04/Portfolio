@@ -6,7 +6,7 @@
 <title>Priyanshu Nada | Product Designer, Human-Centered AI</title>
 <meta name="description" content="Priyanshu Nada is a product designer and CS senior at San Francisco State. He designs and prototypes AI products people can check, correct and trust.">
 <meta property="og:title" content="Priyanshu Nada | Product Designer, Human-Centered AI">
-<meta property="og:description" content="I design AI that people can check, correct and trust. Case studies: Flow and Capstack.">
+<meta property="og:description" content="I design AI that people can check, correct and trust. Case studies: Flow, Capstack and Closet.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nadadesign.netlify.app/">
 <meta property="og:image" content="https://nadadesign.netlify.app/assets/flow-split-decline.jpg">
@@ -323,7 +323,7 @@ footer{border-top:1px solid var(--border)}
   <div class="wrap">
     <div class="reveal">
       <p class="label">Selected work</p>
-      <h2 class="h2">Two projects about giving people the right information <em>at the moment they decide.</em></h2>
+      <h2 class="h2">Three projects about giving people the right information <em>at the moment they decide.</em></h2>
     </div>
 
     <!-- Flow -->
@@ -568,6 +568,125 @@ footer{border-top:1px solid var(--border)}
         </div>
       </div>
     </article>
+
+    <!-- Closet -->
+    <article class="case reveal" aria-labelledby="closet-title">
+      <div class="case-head">
+        <div class="case-kicker"><span class="case-num">03</span><span class="pill">Concept project</span><span class="pill">Consumer AI</span><span class="pill">Explainable suggestions</span></div>
+        <h3 class="case-title" id="closet-title">Closet: an outfit in one glance</h3>
+        <p class="case-lede">An AI wardrobe for busy students. It suggests outfits only from clothes they already own, using their calendar and the weather, and explains every pick so they can grab one and go.</p>
+        <dl class="case-meta">
+          <div><dt>My role</dt><dd>Concept, interaction and visual design, prototype</dd></div>
+          <div><dt>Deliverables</dt><dd>16 interactive screens and states, Figma file with components, design spec</dd></div>
+          <div><dt>Tools</dt><dd>Claude Design, Figma</dd></div>
+          <div><dt>Status</dt><dd>Concept · not built or tested with users yet</dd></div>
+        </dl>
+      </div>
+
+      <figure class="shot">
+        <div class="strip" tabindex="0" role="region" aria-label="Closet screens, scroll sideways to see all eight">
+          <img src="./assets/closet-flow.jpg" width="2844" height="760" loading="lazy" alt="Eight iPhone screens of Closet, left to right: a closed glass wardrobe on a cloud sky with the note Today: Career fair 2 PM, rain after 5; the same wardrobe with its doors open, shelves lit and labeled hanging tops, jackets, shoes, folded knits, trousers, bags and accessories; Today's pick showing three outfit tabs and a Polished outfit of navy oxford shirt, charcoal blazer, charcoal trousers, chelsea boots and tote; the Why I picked this panel with three reasons, each tagged with its source, and a confidence meter; the Not this sheet with reasons such as too formal and wore it to this group last week; the next outfit with an Adjusted for next time note and Undo; an Ask answer for an AI meetup with its reasons; and Privacy settings with a switch for each calendar and style rules for modest dress.">
+        </div>
+        <figcaption>From closed doors to dressed: open the wardrobe, see why each outfit was picked, and correct it in one tap. Scroll sideways to see every screen.</figcaption>
+      </figure>
+
+      <div class="case-body">
+        <div class="cols">
+          <div>
+            <h4 class="h4">The problem</h4>
+            <div class="prose">
+              <p>A student's day can run from a 10 AM class to a 2 PM career fair to an evening meetup. Picking one outfit that works for all of it, the weather, and what's actually clean is a small decision that eats a busy morning.</p>
+              <p>Most style apps answer with shopping or a feed of other people's clothes. <strong>The question is simpler: what should I wear today, from what I own?</strong></p>
+            </div>
+          </div>
+          <div>
+            <h4 class="h4">The idea</h4>
+            <div class="prose">
+              <p>Closet reads the day's calendar and forecast, then picks three outfits from clean items in the wardrobe, with no prompt needed.</p>
+              <p>Every pick says why and where that reason came from. If it got the dress code wrong, one tap fixes it, and Closet says what it learned with an undo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform">
+          <h4 class="h4">How a pick is made</h4>
+          <ol class="plat-row steps4">
+            <li class="plat-card"><span class="plat-kind">1 · Context</span><b>Reads the day</b><span>Only the calendars the student turns on, plus the forecast. Event pages give the dress code when they state one.</span></li>
+            <li class="plat-card"><span class="plat-kind">2 · Wardrobe</span><b>Uses what's clean</b><span>Items in the laundry or worn recently sit out. Nothing to buy, ever.</span></li>
+            <li class="plat-card"><span class="plat-kind">3 · Pick</span><b>Explains itself</b><span>Three outfits, each with reasons, the source of each reason, and a confidence level.</span></li>
+            <li class="plat-card"><span class="plat-kind">4 · Student</span><b>Decides</b><span>Wear this, swap one piece, or Not this. Corrections change future picks, and every change can be undone.</span></li>
+          </ol>
+        </div>
+
+        <div class="tour">
+          <h4 class="h4">Inside the prototype</h4>
+          <div class="tabs" role="tablist" aria-label="Closet screens">
+            <button class="tab" role="tab" id="tab-explain" aria-controls="panel-explain" aria-selected="true">Explains itself</button>
+            <button class="tab" role="tab" id="tab-correct" aria-controls="panel-correct" aria-selected="false" tabindex="-1">Easy to correct</button>
+            <button class="tab" role="tab" id="tab-edges" aria-controls="panel-edges" aria-selected="false" tabindex="-1">When it knows less</button>
+            <button class="tab" role="tab" id="tab-setup" aria-controls="panel-setup" aria-selected="false" tabindex="-1">Setup and privacy</button>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-explain" aria-labelledby="tab-explain">
+            <figure class="feature-img"><img src="./assets/closet-explain.jpg" width="1600" height="1130" loading="lazy" alt="Three Closet screens. A Why I picked this panel: career fair means business casual, from the event page; rain after 5 means boots, from the forecast; the blazer was last worn three weeks ago, from the outfit log; with high confidence. A one quick question card: the Startup Pitch Night page doesn't say what to wear, with Casual, Business casual, Formal and Not sure, above a smart casual pick marked low confidence. An Ask answer for an AI meetup with its reasons, sources and high confidence."></figure>
+            <div class="prose">
+              <p class="panel-title">Every reason names its source</p>
+              <p>Each pick lists why, and every reason carries a chip: from the event page, the forecast, your outfit log or your feedback.</p>
+              <p><strong>Confidence is shown, not hidden.</strong> High when the event page states a dress code, low when Closet is guessing, and "Confirmed by you" once the student fixes it.</p>
+              <p><strong>When it doesn't know, it asks</strong> one short question instead of guessing, and suggests a safe middle until it hears back.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-correct" aria-labelledby="tab-correct">
+            <figure class="feature-img"><img src="./assets/closet-correct.jpg" width="1600" height="1130" loading="lazy" alt="Three Closet screens. The dress code corrected to Casual with the note: career fairs are now casual and I'll remember it, with Undo. The Not this sheet over the rejected Polished outfit with Too formal selected and What I'll change: career fairs will lean one step more casual, Career Services events only, and a note that Closet never comments on bodies, weight or fit. The next outfit, Relaxed, under an Adjusted for next time note with Undo."></figure>
+            <div class="prose">
+              <p class="panel-title">One tap to fix, with an undo</p>
+              <p>Wrong dress code? Three chips fix it for this event, and Closet says it will remember.</p>
+              <p><strong>Not this opens over the outfit being rejected,</strong> so the reason sticks to the right pick. Closet shows exactly what it will change before moving on.</p>
+              <p><strong>The reasons are about clothes and plans only.</strong> Closet never comments on bodies, weight or fit.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-edges" aria-labelledby="tab-edges">
+            <figure class="feature-img"><img src="./assets/closet-edges.jpg" width="1600" height="1130" loading="lazy" alt="Three edge-case screens. No events on your calendars today, with chips for study day, work shift, going out and staying in, and a weather-only Easy Saturday pick marked low confidence. Only 9 clean items today, so 1 outfit instead of 3, with a checklist to mark laundry as clean. You're offline: this is the pick made at 7:02 AM, with a Try again button and reasons stamped with the time they were checked."></figure>
+            <div class="prose">
+              <p class="panel-title">Honest when the data runs out</p>
+              <p>No events, a laundry-day wardrobe, offline: each state says what's missing in plain words and still offers a next step.</p>
+              <p><strong>Confidence drops to match.</strong> A weather-only pick is labeled low confidence, and offline reasons show when they were last checked.</p>
+              <p><strong>It never blames the student</strong> for missing data. It asks, or works with what it has.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup">
+            <figure class="feature-img"><img src="./assets/closet-setup.jpg" width="1600" height="1130" loading="lazy" alt="Three Closet screens. Quick setup step 1: a camera view of a closet rail with framing corners and the hint good light, whole rail fits. Step 2: I found 8 items on your rail, with each item's type, color and dress code as tappable tags, a confirm check per item, and a progress bar at 8 of 10 items. Privacy and controls: a switch for each calendar with internship and personal off, and style rules to keep shoulders and knees covered or always include a head covering."></figure>
+            <div class="prose">
+              <p class="panel-title">Value in one photo, on the student's terms</p>
+              <p>One photo of a closet rail becomes separate items. The student checks each tag, and anything the AI is unsure of is flagged in words.</p>
+              <p><strong>Calendars are opt-in one by one.</strong> Work and personal can stay off, and photos are processed on the phone.</p>
+              <p><strong>Style rules cover modest and cultural dress,</strong> and learned preferences are listed so they can be removed. Delete everything is one button.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="decisions">
+          <h4 class="h4">Key decisions</h4>
+          <ol class="dlist">
+            <li><b>Delight first, then speed.</b><span>The wardrobe doors slide open on the first few visits. After that they open on their own and land on today's pick, and Reduce Motion swaps the slide for a crossfade.</span></li>
+            <li><b>Only what you own.</b><span>No shopping and no feed. The trade-off: suggestions are only as good as the wardrobe Closet knows about, so setup has to be fast.</span></li>
+            <li><b>Explain, then let people fix it.</b><span>A pick without reasons asks for blind trust. Sources, confidence and one-tap corrections make it checkable.</span></li>
+            <li><b>Say state in words, not just color.</b><span>Clean, in laundry and worn recently each have a label, and every item is announced to screen readers with its state, like "Navy oxford shirt, clean."</span></li>
+          </ol>
+        </div>
+
+        <div class="limits">
+          <p><strong>What exists and what doesn't.</strong> A clickable prototype with 12 screens and 4 edge cases, a Figma file with editable layers, components and a linked prototype, and a design spec with measured contrast. Wardrobe recognition, calendar reading and the outfit logic are designed, not built, and the wardrobe is a fictional student's. Next: run the morning flow with 5 students and measure time from opening the app to "Wear this," and how often they trust or correct the reasons.</p>
+        </div>
+        <div class="links">
+          <a class="btn btn-a" href="https://claude.ai/artifact/LcB2bTotSysPZMXRBRj4hm" target="_blank" rel="noopener">Click through the prototype <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-o" href="https://www.figma.com/design/w1pzBBC3hxjBQozhsZzy9R" target="_blank" rel="noopener">Figma file</a>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 <div class="rule"></div>
@@ -579,10 +698,10 @@ footer{border-top:1px solid var(--border)}
     <h2 class="h2">What I'm building now.</h2>
     <p class="lead">Four projects on the same idea: AI you can check before you act on it. Each one goes up here with its prototype, evaluation and limits once it's finished.</p>
     <ul class="next-list">
-      <li><span class="n-num">03</span><span class="n-name">Grounded health context assistant</span><span class="n-desc">Summarizes context from synthetic radiology records, links every claim to its source and flags missing or conflicting records. No diagnosis.</span><span class="n-tag">Coming soon</span></li>
-      <li><span class="n-num">04</span><span class="n-name">Human-approved workflow agent</span><span class="n-desc">An AI agent for one hotel operations task. It proposes actions, a person approves them, and it handles failures and undo honestly.</span><span class="n-tag">Coming soon</span></li>
-      <li><span class="n-num">05</span><span class="n-name">Inclusive multimodal patterns</span><span class="n-desc">Voice, text and image input as real choices, tested with keyboard and screen-reader users.</span><span class="n-tag">Coming soon</span></li>
-      <li><span class="n-num">06</span><span class="n-name">Taking the agent to a pilot</span><span class="n-desc">The workflow agent with a risk review, cost model and rollout plan, the way it would ship inside a company.</span><span class="n-tag">Coming soon</span></li>
+      <li><span class="n-num">04</span><span class="n-name">Grounded health context assistant</span><span class="n-desc">Summarizes context from synthetic radiology records, links every claim to its source and flags missing or conflicting records. No diagnosis.</span><span class="n-tag">Coming soon</span></li>
+      <li><span class="n-num">05</span><span class="n-name">Human-approved workflow agent</span><span class="n-desc">An AI agent for one hotel operations task. It proposes actions, a person approves them, and it handles failures and undo honestly.</span><span class="n-tag">Coming soon</span></li>
+      <li><span class="n-num">06</span><span class="n-name">Inclusive multimodal patterns</span><span class="n-desc">Voice, text and image input as real choices, tested with keyboard and screen-reader users.</span><span class="n-tag">Coming soon</span></li>
+      <li><span class="n-num">07</span><span class="n-name">Taking the agent to a pilot</span><span class="n-desc">The workflow agent with a risk review, cost model and rollout plan, the way it would ship inside a company.</span><span class="n-tag">Coming soon</span></li>
     </ul>
   </div>
 </section>
