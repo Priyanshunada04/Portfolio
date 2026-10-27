@@ -1,45 +1,40 @@
-# nada.design — Portfolio
+# Priyanshu Nada · Portfolio
 
-Personal portfolio for **Priyanshu Nada** — Product Designer specializing in Human-Centered AI and AI Interaction Architecture.
+Portfolio site for **Priyanshu Nada**, product designer focused on human-centered AI.
 
-## Live
+Live: https://nadadesign.netlify.app/
 
-Deploy via GitHub Pages: **Settings → Pages → Source → main / root**
+## Case studies
 
-## Featured Projects
+- **[Flow](https://flowbanking.netlify.app/)**: money tools for Gen Z that live inside group chats. Concept project with three Figma prototypes and a React case-study site.
+- **[Capstack](https://priyanshunada04.github.io/Capstack/)**: a funding directory that shows founders whether they qualify at a glance. UX research plus a working prototype with sample data.
 
-- **[Flow](https://flowbanking.netlify.app/)** — Banking that disappears. Three interconnected HCAI products embedded inside iMessage, Instagram, and Uber.
-- **[Capstack](https://priyanshunada04.github.io/Capstack/)** — Trust-first funding discovery. 2,400+ verified opportunities with 60-second eligibility cards.
+## In progress
 
-## Features
-
-- Custom cursor with magnetic hover effects (desktop)
-- Typewriter hero: intelligence → finance → trust → context → AI (stops)
-- Scroll-triggered reveal animations with staggered children
-- Expandable project module cards
-- Parallax glow orbs on scroll
-- Active nav section highlighting
-- Live clock
-- Responsive: 900px / 600px / 380px + touch target compliance
-- Resume PDF linked from nav, hero, CTA, and footer
-- Single HTML file — zero dependencies, zero build step
+- Grounded health context assistant (synthetic records, source-linked, no diagnosis)
+- Human-approved workflow agent (hotel operations)
+- Inclusive multimodal patterns (keyboard and screen-reader tested)
+- Taking the agent to a pilot (risk review, cost model, rollout plan)
 
 ## Files
 
 ```
-├── index.html                                ← portfolio site
-├── Priyanshu_Nada_Product_Design_Resume.pdf  ← resume
-├── README.md
-├── LICENSE
-└── .gitignore
+├── index.html                                ← the whole site, no build step
+├── assets/                                   ← case-study screenshots
+│   ├── flow-split.jpg
+│   ├── flow-together.jpg
+│   └── capstack-directory.jpg
+├── Priyanshu_Nada_Product_Design_Resume.pdf
+└── README.md
 ```
 
-## Deploy
+## Accessibility
 
-Push to GitHub → Settings → Pages → main / root. Done.
+- Text meets WCAG AA contrast; nothing smaller than 12px
+- Skip link, visible focus states, keyboard-operable menu (Esc closes it)
+- Respects reduced-motion settings; content stays visible if JavaScript fails
+- Descriptive alt text on every screenshot
 
 ## Contact
 
-- Email: pnada.jobs@gmail.com
-- LinkedIn: [priyanshunada](https://www.linkedin.com/in/priyanshunada)
-- GitHub: [Priyanshunada04](https://github.com/Priyanshunada04)
+pnada.jobs@gmail.com · [LinkedIn](https://www.linkedin.com/in/priyanshunada) · [GitHub](https://github.com/Priyanshunada04)
