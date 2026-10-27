@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groundwork case study | Priyanshu Nada</title>
+<meta name="description" content="A context assistant for radiologists. It pulls a patient&#x27;s history, labs and prior reports into one view before the scan is read, links every line to the record it came from, and flags what&#x27;s missing or contradictory. It never suggests a diagnosis.">
+<link rel="canonical" href="https://nadadesign.netlify.app/work/groundwork/">
+<meta property="og:title" content="Groundwork case study | Priyanshu Nada">
+<meta property="og:description" content="A context assistant for radiologists. It pulls a patient&#x27;s history, labs and prior reports into one view before the scan is read, links every line to the record it came from, and flags what&#x27;s missing or contradictory. It never suggests a diagnosis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nadadesign.netlify.app/work/groundwork/">
+<meta property="og:image" content="https://nadadesign.netlify.app/assets/preview/groundwork-b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":"/work/*"},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="../../#top">priyanshu<span>.</span>nada</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../../#work">Work</a></li>
+      <li><a href="../../#next">In progress</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../Priyanshu_Nada_Product_Design_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a class="btn-sm" href="../../#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="../../#work"><span aria-hidden="true">←</span> All work</a></nav>
+
+    <article class="case page" aria-labelledby="groundwork-title">
+      <div class="case-head">
+        <div class="case-kicker"><span class="case-num">04</span><span class="pill">Concept project</span><span class="pill">Healthcare AI</span><span class="pill">Grounded summaries</span></div>
+        <h1 class="case-title" id="groundwork-title" style="view-transition-name:t-groundwork">Groundwork: the patient's story before the scan</h1>
+        <p class="case-lede">A context assistant for radiologists. It pulls a patient's history, labs and prior reports into one view before the scan is read, links every line to the record it came from, and flags what's missing or contradictory. It never suggests a diagnosis.</p>
+        <dl class="case-meta">
+          <div><dt>My role</dt><dd>Research synthesis, interaction and visual design, prototype</dd></div>
+          <div><dt>Research</dt><dd>One in-depth interview with a radiology resident, 48 questions</dd></div>
+          <div><dt>Deliverables</dt><dd>Research board, 13 desktop screens and states, Figma file with a linked prototype</dd></div>
+          <div><dt>Status</dt><dd>Concept · synthetic records · not yet tested with radiologists</dd></div>
+        </dl>
+      </div>
+
+      <figure class="shot" style="view-transition-name:m-groundwork">
+        <div class="strip" tabindex="0" role="region" aria-label="Groundwork screens, scroll sideways to see all six">
+          <img src="../../assets/groundwork-flow.jpg" width="6020" height="720" loading="lazy" alt="Six dark desktop screens of Groundwork, left to right: a worklist of seven CT and MRI studies with context tags such as 1 conflict, 2 missing and Side mismatch; the case context for a CECT abdomen with every line tagged by a blue source chip and a lab report open on the right with the cited line highlighted; two records side by side that disagree about prior surgery; an overdue chest CT follow-up from a 2025 report; the provisional report with the clinical history filled in from records and empty findings and impression fields for the radiologist; and a full-width warning that the request says right knee while the notes say left.">
+        </div>
+        <figcaption>From worklist to report: context arrives before the scan opens, every line can be checked against its record, and the radiologist writes the findings. Scroll sideways to see every screen.</figcaption>
+      </figure>
+
+      <div class="case-body">
+        <div class="cols">
+          <div>
+            <h4 class="h4">The problem</h4>
+            <div class="prose">
+              <p>I interviewed a radiology resident about their day. A study arrives with a one-line request like "?Mass". The history, labs, prior surgery and old scans are spread across PACS, RIS, the hospital record and WhatsApp, and they hunt for them by hand.</p>
+              <p>In their words: <strong>"Sometimes the indication on the requisition form is too brief, making clinical correlation difficult."</strong> Meanwhile one finding can sit in a single image out of thousands.</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="h4">The idea</h4>
+            <div class="prose">
+              <p>Asked what a student should build, they said: "intelligent clinical context systems" that combine prior reports, labs, pathology and notes into one concise view.</p>
+              <p>Groundwork does that and stops there. Every line links to its source, gaps and conflicts are shown instead of filled in, and diagnosis stays with the radiologist.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform">
+          <h4 class="h4">How a case is prepared</h4>
+          <ol class="plat-row steps4">
+            <li class="plat-card"><span class="plat-kind">1 · Gather</span><b>Reads the records</b><span>The request, notes, discharge summaries, labs, prior reports and uploaded outside reports for that hospital ID.</span></li>
+            <li class="plat-card"><span class="plat-kind">2 · Ground</span><b>Links every line</b><span>Each line points to its record and the exact words. Quotes stay word for word.</span></li>
+            <li class="plat-card"><span class="plat-kind">3 · Flag</span><b>Shows the gaps</b><span>Missing items, records that disagree, and follow-ups recommended in past reports that never happened.</span></li>
+            <li class="plat-card"><span class="plat-kind">4 · Radiologist</span><b>Decides</b><span>Resolves conflicts, asks the referring team, and writes the findings. Nothing is sent without them.</span></li>
+          </ol>
+        </div>
+
+        <div class="tour">
+          <h4 class="h4">Inside the prototype</h4>
+          <div class="tabs" role="tablist" aria-label="Groundwork screens">
+            <button class="tab" role="tab" id="tab-gw-src" aria-controls="panel-gw-src" aria-selected="true">Every line has a source</button>
+            <button class="tab" role="tab" id="tab-gw-conf" aria-controls="panel-gw-conf" aria-selected="false" tabindex="-1">Records disagree</button>
+            <button class="tab" role="tab" id="tab-gw-dx" aria-controls="panel-gw-dx" aria-selected="false" tabindex="-1">No diagnosis</button>
+            <button class="tab" role="tab" id="tab-gw-rep" aria-controls="panel-gw-rep" aria-selected="false" tabindex="-1">Into the report</button>
+            <button class="tab" role="tab" id="tab-gw-edge" aria-controls="panel-gw-edge" aria-selected="false" tabindex="-1">Safety and thin records</button>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-gw-src" aria-labelledby="tab-gw-src">
+            <figure class="feature-img"><img src="../../assets/groundwork-source.jpg" width="1600" height="1130" loading="lazy" alt="The case context for Ramesh Kulkarni, CECT abdomen. Left: four items that need attention, a prior-surgery conflict, a missing clinical question, missing ultrasound images and an overdue follow-up, plus creatinine and metformin facts before contrast. Middle: history, lab trend and prior imaging, each line with blue source chips; the bilirubin line is selected. Right: the lab report from 24 October with Total bilirubin 3.8 highlighted, and a list of all seven records."></figure>
+            <div class="prose">
+              <p class="panel-title">One click from a line to the record</p>
+              <p>Every line carries a source chip. Clicking it opens the record on the right with the exact words highlighted, so checking takes a second, not a search.</p>
+              <p><strong>Quotes stay quotes.</strong> Anything shortened links to the line it came from, and the panel says when the context was last checked.</p>
+              <p><strong>"Looked for, not found"</strong> lists what's absent, including which systems aren't connected, so a gap isn't mistaken for a clean history.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-gw-conf" aria-labelledby="tab-gw-conf">
+            <figure class="feature-img"><img src="../../assets/groundwork-conflict.jpg" width="1600" height="1130" loading="lazy" alt="A screen titled Two records disagree about prior surgery. Left: the scan request with Prior surgery: None highlighted, filled in at booking. Right: a 2019 discharge summary signed by the operating surgeon with Laparoscopic cholecystectomy highlighted. Below, three choices for what the case context should say, with Keep both and mention it in my report selected and a saved confirmation with Undo."></figure>
+            <div class="prose">
+              <p class="panel-title">Show both, let the radiologist decide</p>
+              <p>When records disagree, Groundwork doesn't pick a winner. It puts both side by side with who wrote each one and when.</p>
+              <p><strong>The choice is logged with a name</strong> and can be undone. Both original records stay unchanged.</p>
+              <p><strong>Asking is one step away.</strong> Groundwork drafts the question to the referring team from the gaps it found, and nothing goes out until the radiologist presses Send.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-gw-dx" aria-labelledby="tab-gw-dx">
+            <figure class="feature-img"><img src="../../assets/groundwork-refuse.jpg" width="1600" height="1130" loading="lazy" alt="The Ask the records panel with the question What is the diagnosis? selected. The answer, in an amber card, reads: I don't suggest diagnoses. That's for you and your consultant to decide from the images. I can show what the records say, like the June ultrasound, where the pancreatic head couldn't be seen. A source chip links to the ultrasound report."></figure>
+            <div class="prose">
+              <p class="panel-title">It answers about records, never about disease</p>
+              <p>The interview drew the line clearly: AI can assist, but it should never decide alone in complex diagnoses or oncology.</p>
+              <p><strong>Asked for a diagnosis, it declines</strong> and points back to what the records actually say, with the source.</p>
+              <p><strong>Diagnostic words are blocked</strong> from summaries: "likely", "suggestive of", "consistent with". If a source uses them, it's quoted, not paraphrased.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-gw-rep" aria-labelledby="tab-gw-rep">
+            <figure class="feature-img"><img src="../../assets/groundwork-handoff.jpg" width="1600" height="1130" loading="lazy" alt="The provisional report screen. Clinical history is drafted from records with small source numbers after each sentence and a tag reading Drafted from records, check it. Findings and Impression are empty fields tagged You write this. A follow-up note about the overdue chest CT sits below. On the right, a Before you send list shows the open conflict, a question waiting on Surgery Unit 2 and the follow-up, above a Send for consultant review button."></figure>
+            <div class="prose">
+              <p class="panel-title">Context goes in; findings stay human</p>
+              <p>The clinical history arrives drafted from the records, with source numbers the radiologist can keep or drop.</p>
+              <p><strong>Findings and impression are empty</strong> and labelled "You write this". Groundwork never drafts them.</p>
+              <p><strong>Nothing gets lost in handoff.</strong> Open conflicts, unanswered questions and overdue follow-ups are listed before sending, and the consultant sees the same sources.</p>
+            </div>
+          </div>
+
+          <div class="panel wide" role="tabpanel" id="panel-gw-edge" aria-labelledby="tab-gw-edge">
+            <figure class="feature-img"><img src="../../assets/groundwork-edges.jpg" width="1600" height="1130" loading="lazy" alt="Two edge cases. Top: an MRI knee case with a full-width amber warning, Which knee? The records don't agree; the request says RIGHT and the orthopaedics note and X-ray say LEFT, with buttons to confirm either side or ask Ortho. Bottom: an emergency head CT for an unknown male where only the request was found, quoted word for word, with a list of what wasn't found and a panel to link records by hospital ID."></figure>
+            <div class="prose">
+              <p class="panel-title">Loud only for safety, honest when thin</p>
+              <p>Most of Groundwork is quiet, because reading a scan takes full attention. Side, level and site mismatches are the exception: they take over the screen until someone confirms.</p>
+              <p><strong>It never picks a side.</strong> Both confirm buttons look the same.</p>
+              <p><strong>With only an emergency request,</strong> it won't write a summary from one line. It quotes the request and never guesses who an unidentified patient is.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="decisions">
+          <h4 class="h4">Key decisions</h4>
+          <ol class="dlist">
+            <li><b>Records, not diagnosis.</b><span>Staying on the "assist" side is a design choice, not a setting. It's narrower than an AI that reads images, and that's exactly why it's easier to trust and to check.</span></li>
+            <li><b>Show conflicts instead of settling them.</b><span>The trade-off: more for the radiologist to resolve. A silent pick could put the wrong history into a signed report.</span></li>
+            <li><b>Say what's missing, and why.</b><span>Each gap says where Groundwork looked and which systems it can't see, so missing data isn't mistaken for a clean history.</span></li>
+            <li><b>Priority stays with the requesting team.</b><span>Context tags describe the records, not how sick the patient is. Re-ranking the worklist would need clinical validation this concept doesn't have.</span></li>
+          </ol>
+        </div>
+
+        <div class="limits">
+          <p><strong>What exists and what doesn't.</strong> The research is one interview with one resident at one teaching hospital in India, so the six insights are leads to test, not proven needs. All patients and records are synthetic. Record retrieval, source linking and the word filter are designed, not built. Next: walk the same resident through the prototype (they offered to review it), add a consultant and a referring clinician, and measure time to find prior history and how often people open the source links.</p>
+        </div>
+        <div class="links">
+          <a class="btn btn-a" href="https://www.figma.com/proto/5BJNI7uSVZWLaChcW7K2OE/Groundwork?node-id=3-2&amp;starting-point-node-id=3%3A2&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener">Click through the prototype <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-o" href="https://www.figma.com/design/5BJNI7uSVZWLaChcW7K2OE/Groundwork?node-id=2-2" target="_blank" rel="noopener">Research synthesis</a>
+          <a class="btn btn-o" href="https://www.figma.com/design/5BJNI7uSVZWLaChcW7K2OE/Groundwork" target="_blank" rel="noopener">Figma file</a>
+        </div>
+      </div>
+    </article>
+
+    <p class="label" style="margin-top:3.5rem">Next project</p>
+    <a class="nextp" href="../../work/flow/" aria-label="Flow: banking that disappears. Read the case study">
+        <div class="pmedia" style="view-transition-name:m-flow">
+          <img class="a" src="../../assets/preview/flow-a.jpg" width="1200" height="750" loading="lazy" alt="">
+          <img class="b" src="../../assets/preview/flow-b.jpg" width="1200" height="750" loading="lazy" alt="">
+          <span class="phint" aria-hidden="true"><i></i><span class="s1">Before: a bill lands in the group chat</span><span class="s2">After: split settled in 18 seconds</span></span>
+        </div>
+        <div>
+          <div class="pkick"><span class="case-num">01</span><span class="pill">Fintech · Conversational AI</span></div>
+          <h2 class="ptitle" style="view-transition-name:t-flow">Flow: banking that disappears</h2>
+          <p class="pline">AI money tools for Gen Z that show up inside iMessage at the moment someone is about to spend.</p>
+          <div class="pfoot"><span>End-to-end design · 4 min read</span><span class="pgo">Read case study <span class="arr" aria-hidden="true">→</span></span></div>
+        </div>
+      </a>
+    <div class="mini-contact">
+      <p>Hiring for product design or AI/UX? I'd love to talk.</p>
+      <a class="btn btn-a" href="mailto:pnada.jobs@gmail.com">pnada.jobs@gmail.com</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© <span id="yr">2026</span> Priyanshu Nada</span>
+    <nav aria-label="Footer">
+      <a href="mailto:pnada.jobs@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/priyanshunada" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Priyanshunada04" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../Priyanshu_Nada_Product_Design_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>

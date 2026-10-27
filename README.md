@@ -56,3 +56,12 @@ Live: https://nadadesign.netlify.app/
 ## Contact
 
 pnada.jobs@gmail.com · [LinkedIn](https://www.linkedin.com/in/priyanshunada) · [GitHub](https://github.com/Priyanshunada04)
+
+## Site structure (v2)
+
+- `index.html` is the homepage: hero, a grid of four project cards, in progress, about, approach and contact.
+- `work/<project>/index.html` holds one case study per page (Flow, Capstack, Closet, Groundwork), served at `/work/<project>/`.
+- `assets/site.css` and `assets/site.js` are shared by every page.
+- `assets/preview/<project>-a.jpg` and `-b.jpg` are the before and after frames for each card's hover preview. On touch screens they alternate while the card is on screen; with Reduce Motion on they only change on focus or hover.
+- Page-to-page transitions use cross-document View Transitions. Browsers without support simply load the page.
+- Keyboard: press 1 to 4 on the homepage to open a case study.
