@@ -23,7 +23,8 @@ Live: https://nadadesign.netlify.app/
 ├── assets/                                   ← case-study screenshots
 │   ├── flow-split-flow.jpg       ← 9-screen Flow Split flow (from Figma)
 │   ├── flow-split-decline.jpg    ← status + decline path screens
-│   ├── flow-together.jpg
+│   ├── flow-safe-screens.jpg     ← Safe screens (Claude Design prototype)
+│   ├── flow-together-screens.jpg ← Together screens (Claude Design prototype)
 │   └── capstack-directory.jpg
 ├── Priyanshu_Nada_Product_Design_Resume.pdf
 └── README.md

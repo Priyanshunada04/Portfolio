@@ -181,6 +181,10 @@ footer{border-top:1px solid var(--border)}
 .tab[aria-selected="true"]{background:var(--accent);color:var(--bg);font-weight:500}
 .panel{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);gap:2.5rem;align-items:center}
 .js .panel[hidden]{display:none}
+.panel.wide{grid-template-columns:1fr;gap:1.6rem}
+.panel.wide .prose{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
+.panel.wide .prose p+p{margin-top:0}
+.panel.wide .panel-title{grid-column:1 / -1;margin-bottom:-0.6rem}
 .panel-title{font-family:var(--serif);font-size:1.5rem;color:var(--t1);font-weight:400;line-height:1.25}
 .panel + .panel{margin-top:2.5rem}
 .js .panel + .panel{margin-top:0}
@@ -249,6 +253,7 @@ footer{border-top:1px solid var(--border)}
   .cols,.dlist,.about-grid,.feature,.panel,.plat-row{grid-template-columns:1fr}
   .plat-base::before{display:none}
   .handoffs li{grid-template-columns:1fr;gap:0.4rem}
+  .panel.wide .prose{grid-template-columns:1fr;gap:0.8rem}
   .panel{gap:1.4rem}
   .tabs{display:flex;width:100%}
   .tab{flex:1;padding:0 0.6rem}
@@ -326,7 +331,7 @@ footer{border-top:1px solid var(--border)}
         <p class="case-lede">AI money tools for Gen Z that show up inside iMessage, Instagram and Uber at the moment someone is about to spend, instead of asking them to open a separate banking app.</p>
         <dl class="case-meta">
           <div><dt>My role</dt><dd>End to end: research, platform architecture, interaction design</dd></div>
-          <div><dt>Deliverables</dt><dd>3 Figma prototypes, a 9-screen Split flow, architecture docs, React case-study site</dd></div>
+          <div><dt>Deliverables</dt><dd>21-screen clickable prototype across all three products, architecture docs, React case-study site</dd></div>
           <div><dt>Surfaces</dt><dd>iMessage, lock screen, widgets</dd></div>
           <div><dt>Status</dt><dd>Concept, not built for production</dd></div>
         </dl>
@@ -408,25 +413,27 @@ footer{border-top:1px solid var(--border)}
             </div>
           </div>
 
-          <div class="panel" role="tabpanel" id="panel-safe" aria-labelledby="tab-safe">
+          <div class="panel wide" role="tabpanel" id="panel-safe" aria-labelledby="tab-safe">
             <figure class="feature-img">
-              <img src="./assets/flow-safe.jpg" width="1600" height="1380" loading="lazy" alt="Three Flow Safe nudge cards. About to overspend, via lock screen: Coffee puts you $12 over today's safe spend, with Skip it and I'm aware buttons. Friend invites to dinner, via iMessage inline: Based on rent due Friday, safe spend is $67, with Suggest cheaper spot. Paycheck deposited, via widget: $2,400 in, auto-saved $200, safe to spend $340 a week, with Adjust savings.">
+              <img src="./assets/flow-safe-screens.jpg" width="1600" height="1130" loading="lazy" alt="Three Flow Safe screens. A lock-screen notification: Coffee puts you $12 over today's safe spend, with Skip it, I'm aware and Why am I seeing this. The Safe to spend screen: $27 today, a 7-day balance forecast that dips on rent day, and upcoming rent, bills and paycheck. The Why $27 today sheet: balance $1,482 minus rent, bills and a savings goal leaves $192 for 7 days, with confidence levels and buttons to correct a bill, paycheck date or account.">
             </figure>
             <div class="prose">
-              <p class="panel-title">A heads-up, not a lecture</p>
-              <p>Safe looks at recurring bills, income timing and upcoming plans to estimate what's safe to spend. It speaks up only at a decision point, and only where the person already is: the lock screen, an iMessage thread or a widget.</p>
-              <p>Every nudge comes with a way out, like "Skip it" or "I'm aware," and a useful alternative when there is one. The person stays in charge of the decision.</p>
+              <p class="panel-title">A heads-up that shows its math</p>
+              <p>Safe forecasts what's safe to spend from recurring bills, income timing and a savings goal, and speaks up only at a decision point, where the person already is: the lock screen, an iMessage thread or a widget.</p>
+              <p><strong>Every number explains itself.</strong> "Why $27 today" walks through the math, says how sure Flow is about each part, and lets people fix a wrong bill or paycheck date on the spot.</p>
+              <p><strong>Every nudge can be waved off,</strong> tuned or paused. When Flow learns from skipped nudges, it says what it changed and offers an undo.</p>
             </div>
           </div>
 
-          <div class="panel" role="tabpanel" id="panel-together" aria-labelledby="tab-together">
+          <div class="panel wide" role="tabpanel" id="panel-together" aria-labelledby="tab-together">
             <figure class="feature-img">
-              <img src="./assets/flow-together.jpg" width="1600" height="860" loading="lazy" alt="Flow Together screen. A savings pot card for a Cabo spring break trip showing $1,240 of $2,000 saved, 62 percent, with each friend's contribution and Contribute and Boost Goal buttons, next to a four-step user flow.">
+              <img src="./assets/flow-together-screens.jpg" width="1600" height="1130" loading="lazy" alt="Three Flow Together screens. Creating a pot: Cabo Spring Break, $2,000 by March 14, four members from the chat, $50 auto-added each Monday, and a switch to show what I've paid that is off by default. The group chat at 90 percent with a celebration for everyone and a private card only you see saying you're $40 behind, with ways to catch up. Releasing the pot: $2,000 to Sarah for the house, with Sarah and Marcus approved, your turn, and Alex not yet, since 3 of 4 must approve.">
             </figure>
             <div class="prose">
-              <p class="panel-title">Saving as a group, inside the group</p>
-              <p>Anyone in a group chat can start a pot with a goal, amount and deadline. Friends contribute in one tap, on a schedule, or with spare-change round-ups.</p>
-              <p>Progress is celebrated at 25, 50 and 90 percent. Who paid what is opt-in, so the pot builds momentum without calling anyone out.</p>
+              <p class="panel-title">Saving as a group, without calling anyone out</p>
+              <p>Flow notices a group goal in the chat and offers a pot. Friends choose to join, then contribute on a schedule or with round-ups.</p>
+              <p><strong>Celebrate in public, nudge in private.</strong> The group sees progress and milestones. Each person's amount stays private unless they share it, and "you're $40 behind" goes only to the person it's about.</p>
+              <p><strong>Money moves only when the group agrees.</strong> Spending the pot needs 3 of 4 approvals, anyone can cancel, and requests expire in 48 hours.</p>
             </div>
           </div>
         </div>
@@ -435,17 +442,17 @@ footer{border-top:1px solid var(--border)}
           <h4 class="h4">Key decisions</h4>
           <ol class="dlist">
             <li><b>Build into the chat, not a new app.</b><span>The conversation is where the decision happens. The cost: Flow is limited by what each platform lets a third party show, so every card had to work in a small space.</span></li>
-            <li><b>Nudges you can wave off.</b><span>The warning informs the choice without blocking it, so people don't learn to tune it out.</span></li>
+            <li><b>Explain the number, then let people fix it.</b><span>A forecast people can't question is one they stop trusting. Safe shows its math and confidence, and corrections update it right away.</span></li>
             <li><b>Celebrate progress, don't shame.</b><span>Together marks milestones and keeps each person's contribution opt-in, instead of calling out whoever is behind.</span></li>
             <li><b>Show money status in words, not just color.</b><span>Paid, pending, waiting, declined and failed each get a label and an icon, so status still reads for colorblind users and screen readers.</span></li>
           </ol>
         </div>
 
         <div class="limits">
-          <p><strong>What exists and what doesn't.</strong> Three clickable Figma prototypes, the full Split flow and its states, architecture docs and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
+          <p><strong>What exists and what doesn't.</strong> A 21-screen clickable prototype covering Split, Safe and Together, three earlier Figma prototypes, architecture docs and a case-study site. The message parsing and spending forecast are designed, not built, and I haven't tested the concept with users yet. If I took it further, I'd start by watching five friend groups settle a real shared bill.</p>
         </div>
         <div class="links">
-          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener">Click through the Split flow <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-a" href="https://claude.ai/artifact/C9VE2Q7G5Q7guTYBD5x3Nr" target="_blank" rel="noopener">Click through the full prototype <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn btn-o" href="https://flowbanking.netlify.app/" target="_blank" rel="noopener">Full case study</a>
           <a class="btn btn-o" href="https://www.figma.com/make/wkKulpcf5Upid6V0bKaK5L/Flow-Split-iOS-Prototype?fullscreen=1" target="_blank" rel="noopener">Prototype: Split</a>
           <a class="btn btn-o" href="https://www.figma.com/make/vSadqxByG8BfhBhh9dAe1x/Flow-Safe-Screen-Design?fullscreen=1" target="_blank" rel="noopener">Prototype: Safe</a>
