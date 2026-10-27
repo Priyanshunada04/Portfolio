@@ -8,6 +8,7 @@ Live: https://nadadesign.netlify.app/
 
 - **[Flow](https://flowbanking.netlify.app/)**: money tools for Gen Z that live inside group chats. Concept project with three Figma prototypes and a React case-study site.
 - **Capstack**: funding data founders can trust. A designed prototype where an AI agent keeps listings current and curators review high-risk changes.
+- **Groundwork**: a context assistant for radiologists. It summarizes synthetic patient records, links every line to its source, and flags missing or conflicting records. No diagnosis. Built from an in-depth radiologist interview; research board, desktop prototype and Figma file.
 - **Closet**: an AI wardrobe for busy students. Outfits from clothes they own, picked from their calendar and the weather, with every reason sourced and correctable. Clickable prototype, Figma file and design spec.
 
 ## In progress
@@ -34,7 +35,13 @@ Live: https://nadadesign.netlify.app/
 │   ├── closet-explain.jpg        ← reasons, sources, confidence
 │   ├── closet-correct.jpg        ← dress-code fix, Not this, adjusted pick
 │   ├── closet-edges.jpg          ← no events, laundry day, offline
-│   └── closet-setup.jpg          ← capture, tag review, privacy
+│   ├── closet-setup.jpg          ← capture, tag review, privacy
+│   ├── groundwork-flow.jpg       ← 6-screen Groundwork strip
+│   ├── groundwork-source.jpg     ← case context with a source open
+│   ├── groundwork-conflict.jpg   ← two records disagree
+│   ├── groundwork-refuse.jpg     ← declines to diagnose
+│   ├── groundwork-handoff.jpg    ← provisional report
+│   └── groundwork-edges.jpg      ← side mismatch, only the request
 ├── Priyanshu_Nada_Product_Design_Resume.pdf
 └── README.md
 ```
