@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INARA case study | Priyanshu Nada</title>
+<meta name="description" content="An AI assistant for family-run motels that drafts every guest reply with its reason, and lets owners decide what runs on its own.">
+<link rel="canonical" href="https://nadadesign.netlify.app/work/inara/">
+<meta property="og:title" content="INARA case study | Priyanshu Nada">
+<meta property="og:description" content="An AI assistant for family-run motels that drafts every guest reply with its reason, and lets owners decide what runs on its own.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nadadesign.netlify.app/work/inara/">
+<meta property="og:image" content="https://nadadesign.netlify.app/assets/preview/inara-a.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":"/work/*"},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="../../#top">priyanshu<span>.</span>nada</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../../#work">Work</a></li>
+      <li><a href="../../#next">In progress</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../Priyanshu_Nada_Product_Design_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a class="btn-sm" href="../../#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="../../#work"><span aria-hidden="true">←</span> All work</a></nav>
+
+    <article class="case page" aria-labelledby="inara-title">
+      <div class="case-head">
+        <div class="case-kicker"><span class="case-num">01</span><span class="pill">Founder</span><span class="pill">AI operations</span><span class="pill">Human in the loop</span></div>
+        <h1 class="case-title" id="inara-title" style="view-transition-name:t-inara">INARA: your motel, quietly looked after</h1>
+        <p class="case-lede">An AI operations assistant for independent, family-run motels. It answers guest texts in the owner's words, keeps every room's status current, sends cleaning and repair jobs to staff, and only bothers the owner with what truly needs them.</p>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Founder and product designer: research, product, brand, design system, front-end built with an AI coding agent</dd></div>
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Status</dt><dd>Live at inarahq.com · preparing a first pilot with a 40-room San Francisco motel</dd></div>
+          <div><dt>Tools</dt><dd>Claude Design, Figma, React, TypeScript, Claude Code</dd></div>
+        </dl>
+      </div>
+
+      <figure class="shot" style="view-transition-name:m-inara">
+        <picture>
+          <source type="image/webp" srcset="../../assets/inara-site-hero.webp">
+          <img src="../../assets/inara-site-hero.jpg" width="2240" height="1400" fetchpriority="high" decoding="async" alt="The inarahq.com home page at 1440 pixels wide. Left: a tag reading For independent, family-run motels, the headline Your motel, quietly looked after, a line saying INARA answers guest texts in your words, keeps every room's status current and sends jobs to your staff, and an Apply for the free pilot button. Right: a phone titled Guest texts for Palm Court Inn, where a WiFi question was answered automatically and a late-checkout request got INARA's draft with its reason, then was approved and sent at 7:00 AM.">
+        </picture>
+        <figcaption>inarahq.com at 1440px. The phone in the hero plays guest texts for a fictional motel, on example data.</figcaption>
+      </figure>
+
+      <div class="case-body">
+        <div class="cols">
+          <div>
+            <h2 class="h4">The problem</h2>
+            <div class="prose">
+              <p>At an independent motel, the owner is the front desk. A guest texts about the WiFi at 11 PM, a late-checkout request arrives at midnight, a housekeeper needs to know which room to clean next, and a leak can start at 2 AM. Many owners run several properties and are often away, sometimes in another time zone.</p>
+              <p>Their tools are a booking system, a phone and memory. Big hotel software is built for chains, not for a family running 40 rooms.</p>
+            </div>
+          </div>
+          <div>
+            <h2 class="h4">What I heard</h2>
+            <div class="prose">
+              <p>An owner told me about a guest-request and housekeeping tool his motel tried a few years ago. It sat on top of their booking system instead of connecting to it, so the rooms in the tool and the rooms in the booking system never matched. The staff stopped trusting it, and then stopped using it.</p>
+              <p>That one story became a rule: <strong>INARA reads from the booking system and never changes it.</strong> The booking system stays the source of truth for bookings; INARA owns cleaning and repairs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design principles -->
+        <div class="platform">
+          <h2 class="h4">Design principles</h2>
+          <ol class="plat-row steps4">
+            <li class="plat-card">
+              <span class="plat-kind">Principle 01</span>
+              <b>Approve everything at first, automate what you trust.</b>
+              <span>Nothing reaches a guest until the owner says so, one answer at a time.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Principle 02</span>
+              <b>Show the reason.</b>
+              <span>Every draft says why INARA wrote it.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Principle 03</span>
+              <b>Read-only on other systems.</b>
+              <span>INARA never edits the booking system.</span>
+            </li>
+            <li class="plat-card">
+              <span class="plat-kind">Principle 04</span>
+              <b>Only bother the owner with what needs them.</b>
+              <span>Routine questions wait for the morning; urgent ones don't.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Owner app tabs -->
+        <div class="tour">
+          <h2 class="h4">Inside the owner app</h2>
+          <div class="tabs" role="tablist" aria-label="INARA owner app">
+            <button class="tab" role="tab" id="tab-drafts" aria-controls="panel-drafts" aria-selected="true">Drafts</button>
+            <button class="tab" role="tab" id="tab-answers" aria-controls="panel-answers" aria-selected="false" tabindex="-1">Answers</button>
+            <button class="tab" role="tab" id="tab-brief" aria-controls="panel-brief" aria-selected="false" tabindex="-1">Brief</button>
+            <button class="tab" role="tab" id="tab-rooms" aria-controls="panel-rooms" aria-selected="false" tabindex="-1">Rooms</button>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-drafts" aria-labelledby="tab-drafts">
+            <figure class="feature-img">
+              <picture>
+                <source type="image/webp" srcset="../../assets/inara-draft.webp">
+                <img src="../../assets/inara-draft.jpg" width="1000" height="1040" loading="lazy" decoding="async" alt="The owner app on a phone, in a conversation with Maria in Room 204. Her 11:42 PM text asks: Could I check out at 1 tomorrow instead of 11? Below it, INARA's draft, marked Waiting for you, reads: We've noted your request for a 1 PM checkout. The front desk will confirm in the morning. Under the draft: Why this reply: Guest asked to check out late. This says you'll confirm, it promises nothing. The Approve and send button has turned into Tap again to send.">
+              </picture>
+            </figure>
+            <div class="prose">
+              <p class="panel-title">The trust model</p>
+              <p><strong>Drafts with a reason.</strong> For a late-checkout request, INARA drafts "We've noted your request for a 1 PM checkout. The front desk will confirm in the morning." and adds: <em>Why: checkout changes need your OK, so this promises nothing yet.</em></p>
+              <p><strong>Two taps to send.</strong> Approve turns into "Tap again to send" for three seconds. A text can't be taken back, so a single mis-tap never sends.</p>
+              <p><strong>"Sent" means sent.</strong> The confirmation only shows once the text really went.</p>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-answers" aria-labelledby="tab-answers">
+            <figure class="feature-img">
+              <picture>
+                <source type="image/webp" srcset="../../assets/inara-answers.webp">
+                <img src="../../assets/inara-answers.jpg" width="1000" height="1040" loading="lazy" decoding="async" alt="The Answers screen: Switch on the answers you trust to send on their own. New or unusual questions always come to you. The WiFi password and Checkout time answers are switched on and marked Sends on its own. Parking is switched off and marked Waits for you.">
+              </picture>
+            </figure>
+            <div class="prose">
+              <p class="panel-title">The owner chooses what runs on its own</p>
+              <p>Each saved answer (WiFi, checkout time, parking) has a switch: "Sends on its own" or "Waits for you". Automatic answers go out word for word, never reworded. New or unusual questions always come to the owner.</p>
+              <p><strong>One safety checkpoint.</strong> Every outgoing text must match an approved reply, an enabled answer or a required STOP/HELP reply, and an automated test fails if any new code path could text a guest.</p>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-brief" aria-labelledby="tab-brief">
+            <figure class="feature-img">
+              <picture>
+                <source type="image/webp" srcset="../../assets/inara-today.webp">
+                <img src="../../assets/inara-today.jpg" width="1000" height="1040" loading="lazy" decoding="async" alt="The Today screen for Palm Court Inn, a fictional motel. The Morning Brief reads: Overnight, INARA answered 6 texts automatically; 2 replies are waiting for you. There was 1 urgent alert, and 1 of the 4 open jobs is running late. Today has 3 arrivals and 2 departures, and 19 rooms are ready for the 3 still to arrive. Below it, a Needs you list with 5 items starts with a guest complaint about a leaking bathroom ceiling in Room 207.">
+              </picture>
+            </figure>
+            <div class="prose">
+              <p class="panel-title">The Morning Brief</p>
+              <p>At 7 AM the owner gets the night in one paragraph: "Overnight, INARA answered 6 texts automatically; 2 replies are waiting for you. There was 1 urgent alert, and 1 of the 4 open jobs is running late…"</p>
+              <p>The counts are computed in code; the AI only writes the sentences. If the text contains a number that isn't in the facts, or the AI fails, a plain template is used instead. <strong>A summary an owner can't trust is worse than none.</strong></p>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-rooms" aria-labelledby="tab-rooms">
+            <figure class="feature-img">
+              <picture>
+                <source type="image/webp" srcset="../../assets/inara-rooms.webp">
+                <img src="../../assets/inara-rooms.jpg" width="1000" height="1040" loading="lazy" decoding="async" alt="The Rooms screen for 40 rooms, with filters for Empty 4, Checking in 2, Occupied 11, Needs cleaning 3, Ready 19 and Out of order 1, above a grid of Floor 1 rooms. Each tile names its state in words, such as Ready, Occupied, Empty, Needs cleaning or Checking in.">
+              </picture>
+            </figure>
+            <div class="prose">
+              <p class="panel-title">Rooms and jobs</p>
+              <p><strong>Six room states, on purpose.</strong> "Empty" is not "Ready": a room nobody has checked must never look sellable.</p>
+              <p><strong>Staff need no app.</strong> Housekeepers get a text and reply DONE when the room is finished; the room flips to Ready.</p>
+              <p><strong>Slow jobs are flagged,</strong> so the owner hears about the leak still open after two hours, not every routine clean.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consent -->
+        <div class="decisions">
+          <h2 class="h4">Designing consent</h2>
+          <div class="prose">
+            <p>Texting guests and staff is regulated, and carriers review every program. Their rules shaped the product:</p>
+          </div>
+          <ul class="ticks" style="margin-top:1rem">
+            <li>A front-desk sign tells guests how to text and what they agree to.</li>
+            <li>The front desk ticks an unticked "Guest agreed to get texts about their stay" box before any welcome or checkout text.</li>
+            <li>Staff get one invitation only after the owner records that they agreed, and no job texts until they reply YES.</li>
+          </ul>
+          <div class="limits">
+            <p>A pre-launch review of my own website found it promised more than the product did ("one switch stops all texts", "approve everything at first"). <strong>I changed 22 pieces of copy so every claim matches the code,</strong> and added tests that stop the false claims coming back.</p>
+          </div>
+        </div>
+
+        <!-- Brand -->
+        <div class="feature">
+          <figure class="feature-img">
+            <picture>
+              <source type="image/webp" srcset="../../assets/inara-brand.webp">
+              <img src="../../assets/inara-brand.jpg" width="1600" height="1130" loading="lazy" decoding="async" alt="The INARA logo system. A detailed golden tree emblem, used for the brand, sign-in and merchandise. A simplified tree shown at 64, 32 and 16 pixels, for icons and the app header. The lockup of the golden tree with the lowercase serif wordmark inara, shown on a light background and on a dark one.">
+            </picture>
+          </figure>
+          <div>
+            <h2 class="h4">Brand and design system</h2>
+            <ul class="ticks">
+              <li><strong>A golden tree</strong> for the brand, the sign-in and merchandise, and a <strong>simplified tree</strong> that stays sharp at 16 pixels for icons and the app header.</li>
+              <li><strong>A lowercase serif wordmark,</strong> "inara", warm and readable like a name.</li>
+              <li><strong>Tokens for color, type and spacing</strong>, shared by the website, the owner app and the internal staff area.</li>
+              <li><strong>Calm motion:</strong> quick, transform-only transitions; everything still for people who turn motion off.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Before and after (after only for now) -->
+        <div class="platform">
+          <h2 class="h4">Before and after</h2>
+          <div class="prose">
+            <p>The first website explained features twice and hid its FAQ answers. The redesign follows one promise and three ideas (Answers · Organizes · Alerts), each proven by a moving product card. The owner app moved from crowded screens to a consistent 20px grid, one main action per screen, 16–17px text and 44px tap targets.</p>
+          </div>
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="../../assets/inara-site-ideas.webp">
+              <img src="../../assets/inara-site-ideas.jpg" width="2240" height="1268" loading="lazy" decoding="async" alt="The INARA website below the hero. Three cards: 01 Answers, guest texts, in your words; 02 Organizes, rooms, bookings and staff jobs; 03 Alerts, only what truly needs you. Under them, the Answers section, headed Guests get answers in your words, sits beside a product card of saved answers with switches: WiFi password and Checkout time send on their own, Parking and Pet policy wait for you, and 1 reply is waiting for review.">
+            </picture>
+            <figcaption>After: the website's three ideas, with the Answers card that proves the first one.</figcaption>
+          </figure>
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="../../assets/inara-app-after.webp">
+              <img src="../../assets/inara-app-after.jpg" width="1600" height="1130" loading="lazy" decoding="async" alt="Three owner-app screens side by side on the same grid. Today, with the Morning Brief and the Needs you list. Messages, with two replies waiting and the answers sent automatically in the last 24 hours below. Jobs, with four open cleaning and repair jobs, one of them a ceiling leak in Room 207 flagged as urgent.">
+            </picture>
+            <figcaption>After: Today, Messages and Jobs in the owner app, on demo data for a fictional motel.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Building and measuring -->
+        <div class="platform">
+          <div class="cols">
+            <div>
+              <h2 class="h4">Building it</h2>
+              <div class="prose">
+                <p>I designed in Claude Design and built in React and TypeScript with Claude Code as my coding partner. I reviewed every change, wrote the requirements, and checked the work on a real phone.</p>
+                <p>The owner app scores 100 on Lighthouse accessibility, installs to the home screen like a native app, and runs on demo data in every preview so it can be shown safely.</p>
+              </div>
+            </div>
+            <div>
+              <h2 class="h4">What I'll measure in the pilot</h2>
+              <ul class="ticks">
+                <li>Time from a guest's text to a reply</li>
+                <li>Share of texts answered automatically, and how that grows as the owner switches answers on</li>
+                <li>Owner taps per day</li>
+                <li>Cleaning and repair jobs finished on time</li>
+                <li>Nights the owner wasn't woken for something that could wait</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="decisions">
+          <h2 class="h4">What I learned</h2>
+          <ol class="dlist">
+            <li><b>Trust is a product feature.</b><span>Every "why", every confirmation and every honest label is part of the design.</span></li>
+            <li><b>One owner's story can set the architecture.</b><span>The read-only rule came from a single conversation.</span></li>
+            <li><b>Write the copy last, and check it against the product.</b><span>Marketing that overpromises breaks the trust the product earns.</span></li>
+          </ol>
+        </div>
+
+        <div class="limits">
+          <p><strong>Where it stands.</strong> Live at inarahq.com and preparing a first pilot with a 40-room San Francisco motel. Every screen on this page comes from the owner app's demo data, for a fictional motel.</p>
+        </div>
+        <div class="links">
+          <a class="btn btn-a" href="https://inarahq.com/" target="_blank" rel="noopener">Visit inarahq.com <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <p class="label" style="margin-top:3.5rem">Next project</p>
+    <a class="nextp" href="../../work/flow/" aria-label="Flow: banking that disappears. Read the case study">
+        <div class="pmedia" style="view-transition-name:m-flow">
+          <img class="a" src="../../assets/preview/flow-a.jpg" width="1200" height="750" loading="lazy" alt="">
+          <img class="b" src="../../assets/preview/flow-b.jpg" width="1200" height="750" loading="lazy" alt="">
+          <span class="phint" aria-hidden="true"><i></i><span class="s1">Before: a bill lands in the group chat</span><span class="s2">After: split settled in 18 seconds</span></span>
+        </div>
+        <div>
+          <div class="pkick"><span class="case-num">02</span><span class="pill">Fintech · Conversational AI</span></div>
+          <h2 class="ptitle" style="view-transition-name:t-flow">Flow: banking that disappears</h2>
+          <p class="pline">AI money tools for Gen Z that show up inside iMessage at the moment someone is about to spend.</p>
+          <div class="pfoot"><span>End-to-end design · 4 min read</span><span class="pgo">Read case study <span class="arr" aria-hidden="true">→</span></span></div>
+        </div>
+      </a>
+    <div class="mini-contact">
+      <p>Hiring for product design or AI/UX? I'd love to talk.</p>
+      <a class="btn btn-a" href="mailto:pnada.jobs@gmail.com">pnada.jobs@gmail.com</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© <span id="yr">2026</span> Priyanshu Nada</span>
+    <nav aria-label="Footer">
+      <a href="mailto:pnada.jobs@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/priyanshunada" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Priyanshunada04" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../Priyanshu_Nada_Product_Design_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>

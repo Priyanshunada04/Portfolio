@@ -6,6 +6,7 @@ Live: https://nadadesign.netlify.app/
 
 ## Case studies
 
+- **[INARA](https://inarahq.com/)**: an AI operations assistant for independent, family-run motels, which I founded. It drafts every guest reply with its reason and lets owners decide what runs on its own. Live at inarahq.com; case-study images use the owner app's demo data for a fictional motel.
 - **[Flow](https://flowbanking.netlify.app/)**: money tools for Gen Z that live inside group chats. Concept project with three Figma prototypes and a React case-study site.
 - **Capstack**: funding data founders can trust. A designed prototype where an AI agent keeps listings current and curators review high-risk changes.
 - **Groundwork**: a context assistant for radiologists. It summarizes synthetic patient records, links every line to its source, and flags missing or conflicting records. No diagnosis. Built from an in-depth radiologist interview; research board, desktop prototype and Figma file.
@@ -13,16 +14,15 @@ Live: https://nadadesign.netlify.app/
 
 ## In progress
 
-- Grounded health context assistant (synthetic records, source-linked, no diagnosis)
-- Human-approved workflow agent (hotel operations)
-- Inclusive multimodal patterns (keyboard and screen-reader tested)
-- Taking the agent to a pilot (risk review, cost model, rollout plan)
+- 06 INARA pilot: what owners actually did
+- 07 Inclusive multimodal patterns (keyboard and screen-reader tested)
 
 ## Files
 
 ```
 ├── index.html                                ← the whole site, no build step
 ├── assets/                                   ← case-study screenshots
+│   ├── inara-*.webp / .jpg       ← INARA (WebP + JPEG fallback; demo data, fictional motel)
 │   ├── flow-split-flow.jpg       ← 9-screen Flow Split flow (from Figma)
 │   ├── flow-split-decline.jpg    ← status + decline path screens
 │   ├── flow-safe-screens.jpg     ← Safe screens (Claude Design prototype)
@@ -43,6 +43,7 @@ Live: https://nadadesign.netlify.app/
 │   ├── groundwork-handoff.jpg    ← provisional report
 │   └── groundwork-edges.jpg      ← side mismatch, only the request
 ├── Priyanshu_Nada_Product_Design_Resume.pdf
+├── sitemap.xml, robots.txt
 └── README.md
 ```
 
@@ -59,9 +60,9 @@ pnada.jobs@gmail.com · [LinkedIn](https://www.linkedin.com/in/priyanshunada) ·
 
 ## Site structure (v2)
 
-- `index.html` is the homepage: hero, a grid of four project cards, in progress, about, approach and contact.
-- `work/<project>/index.html` holds one case study per page (Flow, Capstack, Closet, Groundwork), served at `/work/<project>/`.
+- `index.html` is the homepage: hero, a grid of five project cards (INARA spans the full width on wide screens), in progress, about, approach and contact.
+- `work/<project>/index.html` holds one case study per page (INARA, Flow, Capstack, Groundwork, Closet), served at `/work/<project>/`.
 - `assets/site.css` and `assets/site.js` are shared by every page.
 - `assets/preview/<project>-a.jpg` and `-b.jpg` are the before and after frames for each card's hover preview. On touch screens they alternate while the card is on screen; with Reduce Motion on they only change on focus or hover.
 - Page-to-page transitions use cross-document View Transitions. Browsers without support simply load the page.
-- Keyboard: press 1 to 4 on the homepage to open a case study.
+- Keyboard: press 1 to 5 on the homepage to open a case study.

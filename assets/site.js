@@ -54,7 +54,7 @@
     })},{threshold:0.5});
     document.querySelectorAll('.pcard').forEach(function(c){po.observe(c)});
   }
-  // v2: keyboard shortcuts on the homepage: 1-4 open a case study
+  // keyboard shortcuts on the homepage: 1-5 open a case study (one per card)
   var cards=document.querySelectorAll('.grid .pcard');
   if(cards.length){document.addEventListener('keydown',function(e){
     if(e.metaKey||e.ctrlKey||e.altKey||/INPUT|TEXTAREA|SELECT/.test((e.target.tagName||'')))return;
